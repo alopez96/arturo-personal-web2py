@@ -1,0 +1,150 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+  var tracks_url = "{{=URL('api', 'get_tracks')}}";
+  var add_track_url = "{{=URL('api', 'add_track', user_signature=True)}}";
+  var del_track_url = "{{=URL('api', 'del_track', user_signature=True)}}";
+</script>
+
+<script src="{{=URL('static', 'js/dropzone.js')}}"></script>
+
+<script>
+$(function() {
+  var num_files = 0;
+  Dropzone.options.fileUploader = {
+    maxFilesize: 10, // MB
+    addRemoveLinks: true,
+    parallelUploads: 2,
+    createImageThumbnails: false,
+    dictRemoveFile: "Remove",
+    init: function() {
+      this.on("removedfile", function(file) {
+        num_files -= 1;
+        if (file.processing) {
+          $.ajax({
+            url: "{{=URL('default', 'remove')}}",
+            method: "POST",
+            data: {name: file.name}
+          });
+        }
+      });
+      this.on("addedfile", function(file) {
+        num_files += 1;
+      });
+      this.on("queuecomplete", function() {
+      });
+    }
+  }
+});
+</script>
+
+{{end}}
+
+<div class="main_content">
+
+  <!-- Dropzone uploader. This unfortunately cannot go into the Vue div -->
+  <div id="uploader_div" style="display:none">
+    <form action="{{=URL('default', 'upload')}}" class="dropzone dz-clickable" id="file-uploader">
+      <div class="dz-message">
+        Drop files here to upload them, or click to select them.
+      </div>
+    </form>
+  </div>
+
+  <div id="vue-div" class="display:none">
+    <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
+
+    <!-- Music player -->
+    <div v-if="selected_id >= 0" class="music_controller">
+      <div v-if="selected_url">
+        I have music
+      </div>
+      <div v-if="!selected_url">
+        No music
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button_bar">
+      <button v-if="!is_adding_track" class="btn"
+              v-on:click="add_track_button()"
+              :disabled="!logged_in"
+              v-bind:class="{'disabled': !logged_in}">
+        <i class="fa fa-plus"></i> Add track
+      </button>
+      <button v-if="is_adding_track" class="btn" v-on:click="add_track_button()">
+      <i class="fa fa-times"></i> Close
+      </button>
+    </div>
+
+
+    <!-- Form to add tracks -->
+    <div v-if="is_adding_track">
+      <form action="#" v-on:submit.prevent="add_track" class="form-horizontal" enctype="multipart/form-data" method="post">
+        <div class="form-group" id="no_table_artist__row">
+          <div>
+            <input class="form-control string" id="no_table_artist" v-model="form_artist" placeholder="Artist" type="text" />
+            <span class="help-block"></span>
+          </div>
+        </div>
+        <div class="form-group" id="no_table_album__row">
+          <div>
+            <input class="form-control string" id="no_table_album" name="album" type="text" v-model="form_album" placeholder="Album"/>
+            <span class="help-block"></span>
+          </div>
+        </div>
+        <div class="form-group" id="no_table_track__row">
+          <div><input class="form-control string" id="no_table_track" name="track" type="text" v-model="form_track" placeholder="Track"/>
+            <span class="help-block"></span>
+          </div>
+        </div>
+        <div class="form-group" id="submit_record__row">
+          <div>
+            <input class="btn btn-primary" id="add_track_submit" type="submit" value="Submit" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- Code to display the table of tracks -->
+    <div class="result_table">
+      <table class="track_table">
+        <thead>
+        <tr>
+          <th></th>
+          <th>Artist</th>
+          <th>Album</th>
+          <th>Track</th>
+          <th>Times Plays</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="track in tracks">
+          <td class="play_selector"><i class="fa" v-on:click="select_track(track._idx)" v-bind:class="{'fa-volume-up': track.id == selected_id, 'fa-volume-off': !(track.id == selected_id)}"></i></td>
+          <td>${track.artist}</td>
+          <td>${track.album}</td>
+          <td>${track.title}</td>
+          <td>${track.num_plays}</td>
+          <td><i class="btn orange rounded fa fa-trash-o" v-on:click="delete_track(track._idx)"></i></td>
+        </tr>
+        </tbody>
+      </table>
+      <div v-if="has_more" class="show_more">
+        <button class="btn btn-default rounded" v-on:click="get_more()">
+          <i class="fa fa-ellipsis-h"></i>
+          Load more
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>
