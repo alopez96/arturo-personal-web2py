@@ -6,3 +6,13 @@ a:not(.btn):not(.noeffect):after {background-color:#26a69a}
 .progress .indeterminate {background-color:#26a69a}
 .tags > span {background-color: #26a69a}
 .tags.dismissible > span.off:hover {background-color:#26a69a}
+
+
+.list-group-item{
+  color:#3385ff;
+}
+
+.list-group-item:hover{
+  cursor: pointer;
+  background: #e6e6e6;
+}
