@@ -1,7 +1,7 @@
 {{extend 'layout.html'}}
 
 {{block head}}
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="{{=URL('static', 'js/vue.js')}}"></script>
 <script>
   var sign_up_user_url = "{{=URL('api', 'sign_up_user')}}";
@@ -17,18 +17,60 @@
   <div id="vue-div" class="display:none">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="#" v-on:click="hom()">
+      <i class="fa fa-home fa-lg">Home</i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item  nav-link" href="#" v-on:click="exp()">Experience</a>
-          <a class="nav-item nav-link" href="#" v-on:click="edu()">Education</a>
-          <a class="nav-item nav-link disabled" href="#" v-on:click="cont()">Contact</a>
+          <a class="nav-item  nav-link" href="#" v-on:click="exp()">
+          <i class="fa fa-code fa-lg">Experience</i></a>
+          <a class="nav-item nav-link" href="#" v-on:click="edu()">
+            <i class="fa fa-book fa-lg"></i>Education</a>
+          <a class="nav-item nav-link disabled" href="#" v-on:click="cont()">
+            <i class="fa fa-phone fa-lg"></i>Contact</a>
         </div>
       </div>
     </nav>
+
+    <div class="" v-if="home">
+      <div class="text-center" style="padding:40px">
+        <h3>Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
+        <img src="http://www.talkchelsea.net/wp-content/uploads/2017/10/Neymar-JR-1068x580.jpg"
+        style="width:80%" alt="image here">
+      </div>
+      <div class="padding">
+        <h4 style="color:#696969">About:</h4>
+        <p>I am currently an undergrad student at UC Santa Cruz, where I will be getting my
+          Computer Science degree and minor in Stats. I have passion for web and android development.
+          You can find me on LinkedIn and check out my source code on GitHub and Bitbucket.
+          I enjoy taking on new projects and learning new technologies.
+        </p>
+        <h4 style="color:#696969">Services:</h4>
+        <h6 style="color:#3385ff">Web Development</h6>
+        <p>
+          My work entails full stack web development (front and backend), and
+          most of my projects have been with Web2py, VueJS, Python, Bootsrap, CSS.
+          I am comfortable with learning new platforms and libraries, and am currently
+          working on developing with Django and ReactJS.
+        </p>
+        <h6 style="color:#3385ff">Android Development</h6>
+        <p>I began learning mobile development with android apps, and am currently
+          working with exposing myself to iOS as well. My next projects will require the
+          use of React Native and Cordova, which will allow me to deploy my apps on
+          both Google Play Store and Apple's App Store.</p>
+        </div>
+        <hr>
+        <div class="text-center">
+          <h4>If you are interested in doing a project with me,
+          message me here </h4>
+          <address>
+            <a class="btn" href="mailto:abc@gmail.com">Email Me</a><br>
+          </address>
+
+        </div>
+    </div>
 
 
     <div class="" v-if="experience">
@@ -65,7 +107,7 @@
           <h2 style="color:#3385ff">Android Development</h2>
           <div class="card-deck">
             <div class="card" style="padding:20px">
-              <img class="card-img-top" src="..." alt="image load error">
+              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqIiq1f0I6ccqwyfTVVmyd9t_U5Ig95tDQKikBwNo7h8dI0XzG1A" alt="image load error">
               <div class="card-body">
                 <h5 class="card-title">project1</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>

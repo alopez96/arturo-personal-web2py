@@ -16,3 +16,14 @@ a:not(.btn):not(.noeffect):after {background-color:#26a69a}
   cursor: pointer;
   background: #e6e6e6;
 }
+
+
+
+hr {
+  background-color: #A9A9A9; height: 1px; border: 0;
+}
+
+h4{
+  padding-top:25px;
+  padding-bottom:25px;
+}

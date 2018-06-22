@@ -43,6 +43,15 @@ var app = function() {
         }
     };
 
+    self.hom = function(){
+      console.log('home page');
+      if(!self.vue.home){
+        self.vue.home = !self.vue.home;
+        self.vue.education = false;
+        self.vue.contact = false;
+        self.vue.experience = false;
+      }
+    }
 
 
     self.exp = function(){
@@ -51,6 +60,7 @@ var app = function() {
         self.vue.experience = !self.vue.experience;
         self.vue.education = false;
         self.vue.contact = false;
+        self.vue.home = false;
       }
     }
     self.edu = function(){
@@ -59,6 +69,7 @@ var app = function() {
         self.vue.education = !self.vue.education;
         self.vue.experience = false;
         self.vue.contact = false;
+        self.vue.home = false;
       }
     }
     self.cont = function(){
@@ -67,6 +78,7 @@ var app = function() {
         self.vue.contact = !self.vue.contact;
         self.vue.education = false;
         self.vue.experience = false;
+        self.vue.home = false;
       }
     }
 
@@ -92,11 +104,12 @@ var app = function() {
             experience: false,
             education: false,
             contact: false,
-            home: false,
+            home: true,
             enter: false,
         },
         methods: {
           add_user: self.add_user,
+          hom: self.hom,
           exp: self.exp,
           edu: self.edu,
           cont: self.cont,
