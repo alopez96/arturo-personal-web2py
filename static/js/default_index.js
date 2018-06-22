@@ -22,7 +22,7 @@ var app = function() {
     };
 
     self.add_user = function(){
-      if(self.vue.name != null){
+      if(self.vue.email != null){
         $.post(sign_up_user_url,
           {
             name: self.vue.name,
@@ -36,10 +36,10 @@ var app = function() {
           });
           console.log('user added');
           self.vue.enter = false;
-          alert("Thank you for messaging me!");
+          alert("Thank you for messaging me! I will contact you within 2 days");
         }
         else{
-          alert("enter name");
+          alert("Please enter email");
         }
     };
 
