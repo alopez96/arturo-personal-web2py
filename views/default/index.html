@@ -4,147 +4,217 @@
 
 <script src="{{=URL('static', 'js/vue.js')}}"></script>
 <script>
-  var tracks_url = "{{=URL('api', 'get_tracks')}}";
-  var add_track_url = "{{=URL('api', 'add_track', user_signature=True)}}";
-  var del_track_url = "{{=URL('api', 'del_track', user_signature=True)}}";
+  var sign_up_user_url = "{{=URL('api', 'sign_up_user')}}";
+  var get_users_url = "{{=URL('api', 'get_users')}}";
+
 </script>
 
 <script src="{{=URL('static', 'js/dropzone.js')}}"></script>
 
-<script>
-$(function() {
-  var num_files = 0;
-  Dropzone.options.fileUploader = {
-    maxFilesize: 10, // MB
-    addRemoveLinks: true,
-    parallelUploads: 2,
-    createImageThumbnails: false,
-    dictRemoveFile: "Remove",
-    init: function() {
-      this.on("removedfile", function(file) {
-        num_files -= 1;
-        if (file.processing) {
-          $.ajax({
-            url: "{{=URL('default', 'remove')}}",
-            method: "POST",
-            data: {name: file.name}
-          });
-        }
-      });
-      this.on("addedfile", function(file) {
-        num_files += 1;
-      });
-      this.on("queuecomplete", function() {
-      });
-    }
-  }
-});
-</script>
-
 {{end}}
 
 <div class="main_content">
-
-  <!-- Dropzone uploader. This unfortunately cannot go into the Vue div -->
-  <div id="uploader_div" style="display:none">
-    <form action="{{=URL('default', 'upload')}}" class="dropzone dz-clickable" id="file-uploader">
-      <div class="dz-message">
-        Drop files here to upload them, or click to select them.
-      </div>
-    </form>
-  </div>
-
   <div id="vue-div" class="display:none">
-    <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
 
-    <!-- Music player -->
-    <div v-if="selected_id >= 0" class="music_controller">
-      <div v-if="selected_url">
-        I have music
-      </div>
-      <div v-if="!selected_url">
-        No music
-      </div>
-    </div>
-
-    <!-- Buttons -->
-    <div class="button_bar">
-      <button v-if="!is_adding_track" class="btn"
-              v-on:click="add_track_button()"
-              :disabled="!logged_in"
-              v-bind:class="{'disabled': !logged_in}">
-        <i class="fa fa-plus"></i> Add track
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <button v-if="is_adding_track" class="btn" v-on:click="add_track_button()">
-      <i class="fa fa-times"></i> Close
-      </button>
-    </div>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item  nav-link" href="#" v-on:click="exp()">Experience</a>
+          <a class="nav-item nav-link" href="#" v-on:click="edu()">Education</a>
+          <a class="nav-item nav-link disabled" href="#" v-on:click="cont()">Contact</a>
+        </div>
+      </div>
+    </nav>
 
 
-    <!-- Form to add tracks -->
-    <div v-if="is_adding_track">
-      <form action="#" v-on:submit.prevent="add_track" class="form-horizontal" enctype="multipart/form-data" method="post">
-        <div class="form-group" id="no_table_artist__row">
-          <div>
-            <input class="form-control string" id="no_table_artist" v-model="form_artist" placeholder="Artist" type="text" />
-            <span class="help-block"></span>
+    <div class="" v-if="experience">
+      <div class="jumbotron">
+        <div class="container">
+          <h2 style="color:#3385ff">Web Development</h2>
+          <div class="card-deck">
+            <div class="card" style="padding:20px">
+              <img class="card-img-top" src="..." alt="image load error">
+              <div class="card-body">
+                <h5 class="card-title">project1</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+            <div class="card" style="padding:20px">
+              <img class="card-img-top" src="..." alt="image load error">
+              <div class="card-body">
+                <h5 class="card-title">project2</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
+            <div class="card" style="padding:20px">
+              <img class="card-img-top" src="..." alt="image load error">
+              <div class="card-body">
+                <h5 class="card-title">project3</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="form-group" id="no_table_album__row">
-          <div>
-            <input class="form-control string" id="no_table_album" name="album" type="text" v-model="form_album" placeholder="Album"/>
-            <span class="help-block"></span>
+      </div>
+      <div class="jumbotron">
+        <div class="container">
+          <h2 style="color:#3385ff">Android Development</h2>
+          <div class="card-deck">
+            <div class="card" style="padding:20px">
+              <img class="card-img-top" src="..." alt="image load error">
+              <div class="card-body">
+                <h5 class="card-title">project1</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+            <div class="card" style="padding:20px">
+              <img class="card-img-top" src="..." alt="image load error">
+              <div class="card-body">
+                <h5 class="card-title">project2</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
+            <div class="card" style="padding:20px">
+              <img class="card-img-top" src="..." alt="image load error">
+              <div class="card-body">
+                <h5 class="card-title">project3</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="form-group" id="no_table_track__row">
-          <div><input class="form-control string" id="no_table_track" name="track" type="text" v-model="form_track" placeholder="Track"/>
-            <span class="help-block"></span>
-          </div>
-        </div>
-        <div class="form-group" id="submit_record__row">
-          <div>
-            <input class="btn btn-primary" id="add_track_submit" type="submit" value="Submit" />
-          </div>
-        </div>
-      </form>
-    </div>
-
-
-    <!-- Code to display the table of tracks -->
-    <div class="result_table">
-      <table class="track_table">
-        <thead>
-        <tr>
-          <th></th>
-          <th>Artist</th>
-          <th>Album</th>
-          <th>Track</th>
-          <th>Times Plays</th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="track in tracks">
-          <td class="play_selector"><i class="fa" v-on:click="select_track(track._idx)" v-bind:class="{'fa-volume-up': track.id == selected_id, 'fa-volume-off': !(track.id == selected_id)}"></i></td>
-          <td>${track.artist}</td>
-          <td>${track.album}</td>
-          <td>${track.title}</td>
-          <td>${track.num_plays}</td>
-          <td><i class="btn orange rounded fa fa-trash-o" v-on:click="delete_track(track._idx)"></i></td>
-        </tr>
-        </tbody>
-      </table>
-      <div v-if="has_more" class="show_more">
-        <button class="btn btn-default rounded" v-on:click="get_more()">
-          <i class="fa fa-ellipsis-h"></i>
-          Load more
-        </button>
       </div>
     </div>
+
+    <div class="" v-if="education">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h2 style="color:#3385ff">Computer Science BS</h2>
+          <p class="lead">
+            I have a Mathematics associates degree from Santa Rosa Junior College, and
+            I will have my Computer Science Bachelor's in fall 2019, from UC
+            Santa Cruz.
+            <ul class="list-group">
+              <li class="list-group-item" data-toggle="collapse" href="#collapse1"
+                role="button" aria-expanded="false" aria-controls="collapse1">Courses</li>
+                <div class="collapse" id="collapse1">
+                  <div class="card card-body">
+                    <ul class="list-group">
+                      <li list-group-item>Algorithm Analysis</li>
+                      <li list-group-item>computer Architechture</li>
+                      <li list-group-item>Web Development</li>
+                      <li list-group-item>Mobile Applications</li>
+                      <li list-group-item>ADT programming</li>
+                    </ul>
+                  </div>
+                </div>
+              <li class="list-group-item" data-toggle="collapse" href="#collapse2"
+                role="button" aria-expanded="false" aria-controls="collapse2">Programs</li>
+                <div class="collapse" id="collapse2">
+                  <div class="card card-body">
+                    <ul class="list-group">
+                      <li list-group-item>Society of Hispanic Professional Engineers (SHPE)
+                        <p>SHPE’s mission is to change lives by empowering the Hispanic
+                        community to realize its fullest potential and to impact the world
+                        through STEM awareness, access, support and development, which advances
+                        their vision of a world where Hispanics are highly valued and influential as the
+                        leading innovators, scientists, mathematicians and engineers</p>
+                      <a href="http://www.shpe.org/">Visit SHPE</a> </li>
+                      <li list-group-item>MESA Engineering Achievement (MEP)
+                        <p>MESA provides educationally and economically disadvantaged
+                        students and their families with the essential skills and resources
+                        to achieve success in school, career, life, and STEM-related disciplines</p>
+                      <a href="https://mep.soe.ucsc.edu/">Visit MEP</a></li>
+                    </ul>
+                  </div>
+                </div>
+              <li class="list-group-item" data-toggle="collapse" href="#collapse3"
+                role="button" aria-expanded="false" aria-controls="collapse3">Extra cirricular</li>
+                <div class="collapse" id="collapse3">
+                  <div class="card card-body">
+                    UC Santa Cruz Rotaract Club
+                    <p>A service, leadership, professional and community
+                      service organization (often miscommunicated as a Social Service Club)
+                      for young men and women between the ages 18–30 - wikipedia
+                    </p>
+                    <a href="https://www.rotary.org/en/get-involved/rotaract-clubs">Visit Rotaract</a></li>
+                </div>
+            </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <div class="text-center" v-if="contact">
+      <h2 style="color:#3385ff">Contact Me</h2> <br />
+      <button type="button" v-on:click="enter_toogle()" v-if="!enter" name="button">message me</button>
+      <div class="" v-if="enter">
+        <form class="dropdown-menu p-4">
+          <div class="form-group">
+            <label for="exampleDropdownFormEmail2">Email address</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+            <label class="form-check-label" for="dropdownCheck2">
+              Remember me
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+        <div class="input-group-append">
+        <input type="text" v-model="name" placeholder="* enter name" required>
+        <input type="text" v-model="email" placeholder="* email" required>
+        <input type="text" v-model="reason" placeholder="reason">
+        <input type="text" v-model="best_time" placeholder="best time to contact">
+        <button class="btn btn-success" v-on:click="add_user">Submit</button>
+        </div>
+        <button class="btn btn-danger" v-on:click="cancel()">Cancel</button>
+    </div>
+    <br />
+    <div>
+    <table class="table ">
+      <thead class="thead-dark">
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Reason</th>
+        <th>Best Time</th>
+        <th>Sent on</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="user in users">
+        <td ><i class="fa"></i></td>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td>${user.reason}</td>
+        <td>${user.best_time}</td>
+        <td>${user.sent_on}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
 
 
   </div>
-
 </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 
 <script src="{{=URL('static', 'js/default_index.js')}}"></script>

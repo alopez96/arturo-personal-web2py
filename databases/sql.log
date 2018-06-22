@@ -75,3 +75,18 @@ CREATE TABLE "track"(
     "created_on" CHAR(512)
 );
 success!
+timestamp: 2018-06-21T13:24:58.269718
+CREATE TABLE "contact_info"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(512),
+    "email" CHAR(512),
+    "reason" CHAR(512)
+);
+success!
+timestamp: 2018-06-21T13:28:53.517008
+ALTER TABLE "contact_info" ADD "best_time" CHAR(512);
+success!
+timestamp: 2018-06-21T13:54:40.251087
+ALTER TABLE "contact_info" ADD "sent_on" CHAR(512);
+success!
+success!

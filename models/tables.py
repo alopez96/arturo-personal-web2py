@@ -12,13 +12,12 @@ import datetime
 def get_user_email():
     return auth.user.email if auth.user else None
 
-db.define_table('track',
-                Field('artist'),
-                Field('album'),
-                Field('title'),
-                Field('num_plays', 'integer'),
-                Field('created_by', default=get_user_email()),
-                Field('created_on', default=datetime.datetime.utcnow()),
+db.define_table('contact_info',
+                Field('name'),
+                Field('email'),
+                Field('reason'),
+                Field('best_time'),
+                Field('sent_on', 'datetime', default=request.now)
                 )
 
 
