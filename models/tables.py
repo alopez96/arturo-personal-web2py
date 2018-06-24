@@ -15,8 +15,9 @@ def get_user_email():
 db.define_table('contact_info',
                 Field('name'),
                 Field('email'),
+                Field('phone_number'),
+                Field('org'),
                 Field('reason'),
-                Field('best_time'),
                 Field('sent_on', 'datetime', default=request.now)
                 )
 

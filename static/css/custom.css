@@ -17,8 +17,6 @@ a:not(.btn):not(.noeffect):after {background-color:#26a69a}
   background: #e6e6e6;
 }
 
-
-
 hr {
   background-color: #A9A9A9; height: 1px; border: 0;
 }
@@ -30,4 +28,42 @@ h4{
 
 .spacing a{
    padding: 30px;
+}
+
+.main_content {
+    /* background: fixed no-repeat bottom center url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT160JnEDwWud0NPo3aAwzkd9VJkgQ4rB199iMxBTrkIXM8QoI8"),
+                fixed bottom repeat url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT160JnEDwWud0NPo3aAwzkd9VJkgQ4rB199iMxBTrkIXM8QoI8"); */
+     /* background: linear-gradient(#4db8ff, white); */
+     /* background: linear-gradient(#88BDBC, #376E6F); */
+}
+
+.blue_button{
+  background-color: #3385ff;
+}
+
+ .navbar{
+  border: 2px solid white;
+  border-radius: 12px;
+}
+
+#contact a{
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+}
+
+#contact button{
+  color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+}
+
+.card-img-top{
+  border: 4px solid #3385ff;
+  border-radius: 10px;
+}
+
+.round_image{
+  border: 4px solid black;
+ border-radius: 10px;
 }

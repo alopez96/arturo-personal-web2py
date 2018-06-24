@@ -6,17 +6,15 @@
 <script>
   var sign_up_user_url = "{{=URL('api', 'sign_up_user')}}";
   var get_users_url = "{{=URL('api', 'get_users')}}";
-
 </script>
-
 <script src="{{=URL('static', 'js/dropzone.js')}}"></script>
-
 {{end}}
 
 <div class="main_content">
   <div id="vue-div" class="display:none">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="header_style">
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+      <!-- <img src="../static/images/favicon2.ico" style="height:30" alt="favico here"> -->
       <a class="navbar-brand" href="#" v-on:click="hom()">
       <i class="fa fa-home fa-lg">Home</i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,26 +22,29 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="#" v-on:click="exp()">
-          <i class="fa fa-code fa-lg">Experience</i></a>
+          <a class="nav-item nav-link mr-auto" href="#" v-on:click="exp()">
+            <i class="fa fa-laptop fa-lg"></i>Experience</a>
           <a class="nav-item nav-link" href="#" v-on:click="edu()">
             <i class="fa fa-book fa-lg"></i>Education</a>
-          <a class="nav-item nav-link disabled" href="#" v-on:click="cont()">
+          <a class="nav-item nav-link" href="#" v-on:click="cont()">
             <i class="fa fa-phone fa-lg"></i>Contact</a>
+          <!-- <a class="nav-item nav-link" href="https://resume.com/share/arturosresume1234" v-on:click="cont()">
+            <i class="fa fa-list fa-lg"></i>Resume</a> -->
         </div>
       </div>
     </nav>
+  </div>
 
-    <div class="" v-if="home">
+    <div class="" v-if="home" >
       <div class="text-center" style="padding:40px">
         <h3>Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
-        <img src="http://www.talkchelsea.net/wp-content/uploads/2017/10/Neymar-JR-1068x580.jpg"
-        style="width:80%" alt="image here">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSSz2YOs3RUnw0Vy7HydfU69_PxRsBq9FS2QsmsxnJ6JoStL1eJA"
+         alt="image here" class="round_image">
       </div>
       <div class="padding">
         <h4 style="color:#696969">About:</h4>
         <p>I am currently an undergrad student at UC Santa Cruz, where I will be getting my
-          Computer Science degree and minor in Stats. I have passion for web and android development.
+          Computer Science degree and minor in Stats. I have passion for web development and front end design.
           You can find me on <a href="https://www.linkedin.com/in/arturo-lopez-936497158">LinkedIn</a>,
            or check out my source code on <a href="https://github.com/alopez96">GitHub</a>
            and <a href="https://bitbucket.org/arturolopez12/">Bitbucket</a>.
@@ -65,10 +66,9 @@
         </div>
         <hr>
         <div class="text-center">
-          <h4>If you are interested in doing a project with me,
-          message me here </h4>
+          <h4>If you are interested in doing a project with me, message me </h4>
           <address>
-            <a class="btn" href="mailto:abc@gmail.com">Email Me</a><br>
+            <a class="blue_button btn" href="mailto:abc@gmail.com">Email Me</a><br>
           </address>
 
         </div>
@@ -76,61 +76,65 @@
 
 
     <div class="" v-if="experience">
-      <div class="jumbotron">
-        <div class="container">
-          <h2 style="color:#3385ff">Web Development</h2>
+      <br />
+      <div class="text-center">
+        <h2>Experience</h2>
+        <h5>Check out some of the work I have done.</h5>
+      </div>
+        <div class="container jumbotron">
           <div class="card-deck">
             <div class="card" style="padding:20px">
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7G4AdmiqRPp--ZeZidOD7h0_7WI58Btaf7OI9tOWAnVzhQT4w" alt="image load error">
+              <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
+                <a class="card-img-top" href="http://1-dot-porter-boys-14945.appspot.com/project/default/index">
+                  <img border="0" alt="image load error" src="https://i.imgur.com/Y91bp8q.png" >
+                </a>
+              <br />
               <div class="card-body">
-                <h5 class="card-title">project1</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h6 class="card-text">
+                  Want to play a quick soccer game, or set up a tournament for a weekend?
+                  Have fun, be active, and meet new people!
+                </h6>
+                <hr />
+                <h6>
+                This website used Web2py as framework, Python for writing backend server,
+                VueJS for front end management, and HTML, CSS, and bootstrap
+                for styling. The chat was created using realtime database from Firebase to get instant messages.
+              </h6>
               </div>
             </div>
             <div class="card" style="padding:20px">
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2AxT-37NrtY3DuODW2TKpbKZu06OQR_D59kx5Z3kFmUjJGNwm1g" alt="image load error">
+              <h4 class="card-title" style="color:#3385ff">Game Up</h4>
+              <a class="card-img-top text-center" href="#">
+                <img border="0" alt="image load error" src="https://i.imgur.com/bFV1JHx.png" width="300" height="400" >
+              </a>
+              <br />
               <div class="card-body">
-                <h5 class="card-title">project2</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <h6 class="card-text">
+                  Connect with (video) gamers around your area, or a different town.
+                  Communicate with them, and create events, join others events, and follow friends.
+                  Customize your profile to let people know what your interests.
+                  Happy Gaming!
+                </h6>
+                <hr />
+                <h6>
+                This Android App was developed using Android Studio, Java, and
+                Firebase Database to manage information.
+              </h6>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="jumbotron">
-        <div class="container">
-          <h2 style="color:#3385ff">Android Development</h2>
-          <div class="card-deck">
-            <div class="card" style="padding:20px">
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSR_FTSnqE8Ds4kW6fYsj-fBpAkn1kUONWGryzNTau3o8OSnV_" alt="image load error">
-              <div class="card-body">
-                <h5 class="card-title">project1</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-            <div class="card" style="padding:20px">
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSR_FTSnqE8Ds4kW6fYsj-fBpAkn1kUONWGryzNTau3o8OSnV_" alt="image load error">
-              <div class="card-body">
-                <h5 class="card-title">project2</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              </div>
-            </div>
-            <div class="card" style="padding:20px">
-              <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSR_FTSnqE8Ds4kW6fYsj-fBpAkn1kUONWGryzNTau3o8OSnV_" alt="image load error">
-              <div class="card-body">
-                <h5 class="card-title">project3</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
 
     <div class="" v-if="education">
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h2 style="color:#3385ff">Computer Science BS</h2>
+      <br />
+      <div class="text-center">
+        <h2>Education</h2>
+        <h5>I am an undergrad student constantly looking to get involved in activities that go beyond classroom learning.</h5>
+      </div>
+        <div class="container jumbotron">
+          <h2>Computer Science BS</h2>
           <p class="lead">
             I have a Mathematics associates degree from Santa Rosa Junior College, and
             I will have my Computer Science Bachelor's in fall 2019, from UC
@@ -186,10 +190,11 @@
         </p>
       </div>
     </div>
-  </div>
 
-    <div class="text-center" v-if="contact">
-      <h2 style="color:#3385ff">Contact Me</h2> <br />
+    <div class="text-center" v-if="contact" id="contact">
+      <div v-if="!form">
+      <br />
+      <h2>Contact Me</h2> <br />
       <h2>
         <div class="spacing">
           <a href="https://www.linkedin.com/in/arturo-lopez-936497158" class="fa fa-linkedin fa-lg"></a>
@@ -199,27 +204,45 @@
           <a href="mailto:abc@gmail.com" class="fa fa-envelope fa-lg"></a>
         </div>
       </h2>
-      <button type="button" v-on:click="enter_toogle()" v-if="!enter" name="button" class="fa fa-list-alt fa-lg">message me with this form</button>
-      <div class="" v-if="enter">
-        <button class="btn btn-danger" v-on:click="cancel()">Cancel</button>
-        <div class="input-group-append">
-        <input type="text" v-model="name" placeholder="* name" required>
-        <input type="text" v-model="email" placeholder="* email" required>
-        <input type="text" v-model="reason" placeholder="reason">
-        <input type="text" v-model="best_time" placeholder="best time to contact">
-        <button class="btn btn-success" v-on:click="add_user">Submit</button>
-        </div>
-    </div>
+      <br />
+      <div class="">
+        <form>
+          <div class="form-group">
+            <label>First and Last Name</label>
+            <input type="text" v-model="name" required class="form-control" aria-describedby="emailHelp" placeholder="*requred">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" v-model="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="*required">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" v-model="phone" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label>Company/ Organization</label>
+            <input type="text" v-model="org" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" v-model="reason" class="form-control" placeholder="project details, budget, deadline">
+          </div>
+          <button type="submit" v-on:click="add_user" href="#" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+  </div>
     <br />
-    <div>
+    <div v-if="form">
     <table class="table ">
       <thead class="thead-dark">
       <tr>
         <th></th>
         <th>Name</th>
         <th>Email</th>
+        <th>Phone</th>
+        <th>Org</th>
         <th>Reason</th>
-        <th>Best Time</th>
         <th>Sent on</th>
         <th></th>
       </tr>
@@ -229,8 +252,9 @@
         <td ><i class="fa"></i></td>
         <td>${user.name}</td>
         <td>${user.email}</td>
+        <td>${user.phone_number}</td>
+        <td>${user.org}</td>
         <td>${user.reason}</td>
-        <td>${user.best_time}</td>
         <td>${user.sent_on}</td>
       </tr>
       </tbody>

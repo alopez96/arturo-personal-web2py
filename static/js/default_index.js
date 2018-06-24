@@ -18,6 +18,8 @@ var app = function() {
           function (data) {
             self.vue.users = data.users;
             enumerate(self.vue.users);
+            self.vue.current_email = data.current_user_email;
+            self.vue.form = data.show;
           })
     };
 
@@ -27,16 +29,16 @@ var app = function() {
           {
             name: self.vue.name,
             email: self.vue.email,
+            phone_number: self.vue.phone,
+            org: self.vue.org,
             reason: self.vue.reason,
-            best_time: self.vue.best_time,
           }, function(data){
-            // $.web2py.enableElement($('#add_image_url'));
             self.vue.users.unshift(data.users);
             enumerate(self.vue.users);
           });
           console.log('user added');
-          self.vue.enter = false;
-          alert("Thank you for messaging me! I will contact you within 2 days");
+          alert("Thank you for messaging me!");
+          self.hom();
         }
         else{
           alert("Please enter email");
@@ -82,6 +84,16 @@ var app = function() {
       }
     }
 
+    self.res = function(){
+      console.log('contact page');
+      if(!self.vue.resume){
+        self.vue.resume = !self.vue.resume;
+        self.vue.education = false;
+        self.vue.experience = false;
+        self.vue.home = false;
+      }
+    }
+
     self.enter_toogle = function(){
       self.vue.enter = true;
     }
@@ -91,21 +103,27 @@ var app = function() {
     }
 
 
+
     self.vue = new Vue({
         el: "#vue-div",
         delimiters: ['${', '}'],
         unsafeDelimiters: ['!{', '}'],
         data: {
             users: [],
+            logged_in: false,
             name: null,
             email: null,
+            phone: null,
+            org: null,
             reason: null,
-            best_time: null,
             experience: false,
             education: false,
             contact: false,
             home: true,
-            enter: false,
+            resume: false,
+            enter: true,
+            current_email: null,
+            form: false,
         },
         methods: {
           add_user: self.add_user,
@@ -113,13 +131,16 @@ var app = function() {
           exp: self.exp,
           edu: self.edu,
           cont: self.cont,
+          res: self.res,
           enter_toogle: self.enter_toogle,
           cancel: self.cancel,
+          show_form: self.show_form,
         }
 
     });
 
     self.get_users();
+
     $("#vue-div").show();
 
     return self;
