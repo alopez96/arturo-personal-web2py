@@ -1,4 +1,4 @@
-timestamp: 2018-06-17T12:05:53.972657
+timestamp: 2018-06-24T16:38:26.100957
 CREATE TABLE "web2py_session_Arturo"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "locked" CHAR(1),
@@ -9,7 +9,7 @@ CREATE TABLE "web2py_session_Arturo"(
     "session_data" BLOB
 );
 success!
-timestamp: 2018-06-17T12:05:53.982219
+timestamp: 2018-06-24T16:38:26.104939
 CREATE TABLE "auth_user"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "first_name" CHAR(128),
@@ -21,21 +21,21 @@ CREATE TABLE "auth_user"(
     "registration_id" CHAR(512)
 );
 success!
-timestamp: 2018-06-17T12:05:53.992093
+timestamp: 2018-06-24T16:38:26.108643
 CREATE TABLE "auth_group"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "role" CHAR(512),
     "description" TEXT
 );
 success!
-timestamp: 2018-06-17T12:05:53.995361
+timestamp: 2018-06-24T16:38:26.111780
 CREATE TABLE "auth_membership"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
 );
 success!
-timestamp: 2018-06-17T12:05:53.999854
+timestamp: 2018-06-24T16:38:26.114455
 CREATE TABLE "auth_permission"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
@@ -44,7 +44,7 @@ CREATE TABLE "auth_permission"(
     "record_id" INTEGER
 );
 success!
-timestamp: 2018-06-17T12:05:54.003187
+timestamp: 2018-06-24T16:38:26.117208
 CREATE TABLE "auth_event"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "time_stamp" TIMESTAMP,
@@ -54,7 +54,7 @@ CREATE TABLE "auth_event"(
     "description" TEXT
 );
 success!
-timestamp: 2018-06-17T12:05:54.007942
+timestamp: 2018-06-24T16:38:26.120513
 CREATE TABLE "auth_cas"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
@@ -64,225 +64,14 @@ CREATE TABLE "auth_cas"(
     "renew" CHAR(1)
 );
 success!
-timestamp: 2018-06-17T12:05:54.013340
-CREATE TABLE "track"(
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "artist" CHAR(512),
-    "album" CHAR(512),
-    "title" CHAR(512),
-    "num_plays" INTEGER,
-    "created_by" CHAR(512),
-    "created_on" CHAR(512)
-);
-success!
-timestamp: 2018-06-21T13:24:58.269718
+timestamp: 2018-06-24T16:38:26.124557
 CREATE TABLE "contact_info"(
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "name" CHAR(512),
     "email" CHAR(512),
-    "reason" CHAR(512)
+    "phone_number" CHAR(512),
+    "org" CHAR(512),
+    "reason" CHAR(512),
+    "sent_on" TIMESTAMP
 );
-success!
-timestamp: 2018-06-21T13:28:53.517008
-ALTER TABLE "contact_info" ADD "best_time" CHAR(512);
-success!
-timestamp: 2018-06-21T13:54:40.251087
-ALTER TABLE "contact_info" ADD "sent_on" CHAR(512);
-success!
-success!
-timestamp: 2018-06-24T00:43:10.089858
-ALTER TABLE "contact_info" ADD "phone_number" CHAR(512);
-timestamp: 2018-06-24T00:43:10.121000
-ALTER TABLE "contact_info" ADD "org" CHAR(512);
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
-success!
 success!

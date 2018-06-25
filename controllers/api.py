@@ -14,6 +14,7 @@ def get_users():
                 org = r.org,
                 reason = r.reason,
                 sent_on = r.sent_on,
+                id = r.id,  
             )
             users.append(t)
     return response.json(dict(users = users,
@@ -30,4 +31,8 @@ def sign_up_user():
     )
     t = db.contact_info(t_id);
     return response.json(dict(users = t))
-    
+
+def delete_message():
+    m_id = request.vars.message_id
+    db(db.contact_info.id == m_id).delete()
+    return response.json(dict(success=True))

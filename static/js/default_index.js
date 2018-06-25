@@ -45,6 +45,18 @@ var app = function() {
         }
     };
 
+    self.delete_message = function(id, idx){
+      console.log('delete');
+      $.post(delete_message_url,{
+        message_id: id,
+      },function(data){
+        if(data.success){
+          self.vue.users.splice( idx, 1 );
+          enumerate( self.vue.users);
+        }
+      })
+    }
+
     self.hom = function(){
       console.log('home page');
       if(!self.vue.home){
@@ -123,10 +135,11 @@ var app = function() {
             resume: false,
             enter: true,
             current_email: null,
-            form: false,
+            form: true,
         },
         methods: {
           add_user: self.add_user,
+          delete_message: self.delete_message,
           hom: self.hom,
           exp: self.exp,
           edu: self.edu,
@@ -134,13 +147,12 @@ var app = function() {
           res: self.res,
           enter_toogle: self.enter_toogle,
           cancel: self.cancel,
-          show_form: self.show_form,
+          delete_message: self.delete_message,
         }
 
     });
 
     self.get_users();
-
     $("#vue-div").show();
 
     return self;

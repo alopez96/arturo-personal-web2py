@@ -6,6 +6,7 @@
 <script>
   var sign_up_user_url = "{{=URL('api', 'sign_up_user')}}";
   var get_users_url = "{{=URL('api', 'get_users')}}";
+  var delete_message_url = "{{=URL('api','delete_message')}}";
 </script>
 <script src="{{=URL('static', 'js/dropzone.js')}}"></script>
 {{end}}
@@ -85,7 +86,7 @@
           <div class="card-deck">
             <div class="card" style="padding:20px">
               <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
-                <a class="card-img-top" href="http://1-dot-porter-boys-14945.appspot.com/project/default/index">
+                <a class="card-img-top" href="http://socer-a512d.appspot.com/soccer">
                   <img border="0" alt="image load error" src="https://i.imgur.com/Y91bp8q.png" >
                 </a>
               <br />
@@ -205,7 +206,7 @@
         </div>
       </h2>
       <br />
-      <div class="">
+      <div>
         <form>
           <div class="form-group">
             <label>First and Last Name</label>
@@ -218,11 +219,11 @@
           </div>
           <div class="form-group">
             <label>Phone Number</label>
-            <input type="text" v-model="phone" class="form-control" placeholder="">
+            <input type="text" v-model="phone" class="form-control">
           </div>
           <div class="form-group">
             <label>Company/ Organization</label>
-            <input type="text" v-model="org" class="form-control" placeholder="">
+            <input type="text" v-model="org" class="form-control">
           </div>
           <div class="form-group">
             <label>Description</label>
@@ -234,7 +235,7 @@
   </div>
     <br />
     <div v-if="form">
-    <table class="table ">
+    <table class="table">
       <thead class="thead-dark">
       <tr>
         <th></th>
@@ -244,6 +245,8 @@
         <th>Org</th>
         <th>Reason</th>
         <th>Sent on</th>
+        <th>id</th>
+        <th>_idx</th>
         <th></th>
       </tr>
       </thead>
@@ -256,6 +259,9 @@
         <td>${user.org}</td>
         <td>${user.reason}</td>
         <td>${user.sent_on}</td>
+        <td>${user.id}</td>
+        <td>${user._idx}</td>
+        <td><button type="button" name="button" class ="btn btn-danger"v-on:click="delete_message(user.id, user._idx)">delete</button> </td>
       </tr>
       </tbody>
     </table>
