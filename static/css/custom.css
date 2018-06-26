@@ -36,6 +36,7 @@ h4{
     padding-right: 50px;
     padding-bottom: 80px;
     padding-left: 100px;
+    margin-top: -150;
 }
 
 .blue_button{
@@ -95,7 +96,7 @@ h4{
 .fixed_navbar{
   overflow: hidden;
     position: fixed;
-    top: 50; /* Position the navbar at the top of the page */
+    top: 70; /* Position the navbar at the top of the page */
     width: 12%; /* Full width */
 }
 .fixed_navbar a{
@@ -126,4 +127,8 @@ h4{
   font-weight: 600;
   font-size: 20px;
   text-shadow: 1.5px 1.5px white;
+}
+
+.nav li{
+  margin: 0 0 20px 0;
 }
