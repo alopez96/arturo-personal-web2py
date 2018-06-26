@@ -30,20 +30,25 @@ h4{
    padding: 30px;
 }
 
-.main_content {
+.main_content1 {
     /* background: fixed no-repeat bottom center url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT160JnEDwWud0NPo3aAwzkd9VJkgQ4rB199iMxBTrkIXM8QoI8"),
                 fixed bottom repeat url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT160JnEDwWud0NPo3aAwzkd9VJkgQ4rB199iMxBTrkIXM8QoI8"); */
-     /* background: linear-gradient(#4db8ff, white); */
-     /* background: linear-gradient(#88BDBC, #376E6F); */
+    padding-right: 50px;
+    padding-bottom: 80px;
+    padding-left: 100px;
 }
 
 .blue_button{
   background-color: #3385ff;
 }
+.blue_button:hover{
+  color: black;
+}
 
  .navbar{
   border: 2px solid white;
   border-radius: 12px;
+  background:transparent;
 }
 
 #contact a{
@@ -66,4 +71,59 @@ h4{
 .round_image{
   border: 4px solid black;
  border-radius: 10px;
+}
+
+.home_header{
+    font-weight: 600;
+    font-size: 20px;
+    line-height:150%;
+    font: sans-serif;
+}
+
+.home_header h3{
+    font-weight: 340;
+    font-size: 50px;
+    line-height:150%;
+}
+
+.home_subhead{
+  color: #696969;
+  font-size: 30px;
+  font-weight: 450;
+}
+
+.fixed_navbar{
+  overflow: hidden;
+    position: fixed;
+    top: 50; /* Position the navbar at the top of the page */
+    width: 12%; /* Full width */
+}
+.fixed_navbar a{
+  color: black;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+
+.main_content {
+  background-image:
+    /* linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ), */
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi9iS_qHGCDEH8B-96XOjL88y2hzfqKqlloVIWLFLzOW-1OEOftw");
+    font: sans-serif;
+
+}
+
+.link_color{
+  color: #3385ff;
+  text-shadow: 1.5px 1.5px white;
+}
+
+.link_color1{
+  color: #3385ff;
+  font-weight: 600;
+  font-size: 20px;
+  text-shadow: 1.5px 1.5px white;
 }

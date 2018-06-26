@@ -3,6 +3,12 @@
 {{block head}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="{{=URL('static', 'js/vue.js')}}"></script>
+<!-- Custom Fonts -->
+<!-- <link rel="stylesheet" media="all" href="https://blackrockdigital.github.io/startbootstrap-grayscale/css/bootstrap.min.css" /> -->
+<link rel="stylesheet" media="all" href="https://blackrockdigital.github.io/startbootstrap-grayscale/css/grayscale.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
 <script>
   var sign_up_user_url = "{{=URL('api', 'sign_up_user')}}";
   var get_users_url = "{{=URL('api', 'get_users')}}";
@@ -13,123 +19,90 @@
 
 <div class="main_content">
   <div id="vue-div" class="display:none">
-    <div class="header_style">
+    <!-- <div class="header_style fixed_navbar">
     <nav class="navbar navbar-expand-lg bg-light navbar-light">
-      <!-- <img src="../static/images/favicon2.ico" style="height:30" alt="favico here"> -->
-      <a class="navbar-brand" href="#" v-on:click="hom()">
+      <img src="../static/images/favicon2.ico" style="height:30" alt="AL">
+      <a id="nav-home" class="navbar-brand page-scroll" href="#about">
       <i class="fa fa-home fa-lg">Home</i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link mr-auto" href="#" v-on:click="exp()">
-            <i class="fa fa-laptop fa-lg"></i>Experience</a>
-          <a class="nav-item nav-link" href="#" v-on:click="edu()">
+          <a id="nav-edu" class="nav-item nav-link" href="#education" >
             <i class="fa fa-book fa-lg"></i>Education</a>
-          <a class="nav-item nav-link" href="#" v-on:click="cont()">
+            <a id="nav-exp" class="nav-item nav-link" href="#experience" >
+              <i class="fa fa-laptop fa-lg"></i>Experience</a>
+          <a id="nav-contact" class="nav-item nav-link" href="#contact" >
             <i class="fa fa-phone fa-lg"></i>Contact</a>
-          <!-- <a class="nav-item nav-link" href="https://resume.com/share/arturosresume1234" v-on:click="cont()">
-            <i class="fa fa-list fa-lg"></i>Resume</a> -->
         </div>
       </div>
     </nav>
-  </div>
+  </div> -->
 
-    <div class="" v-if="home" >
-      <div class="text-center" style="padding:40px">
-        <h3>Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
+  <img src="../static/images/favicon2.ico" style="height:30" alt="AL">
+
+  <ul class="nav flex-column fixed_navbar">
+    <li class="nav-item">
+      <a id="nav-home" class="nav-link" href="#home">
+        <i class="fa fa-home fa-lg"></i>Home</a>
+    </li>
+    <li class="nav-item">
+      <a id="nav-edu" class="nav-link" href="#education">
+        <i class="fa fa-book fa-lg"></i>Education</a>
+    </li>
+    <li class="nav-item">
+      <a id="nav-exp" class="nav-link" href="#experience">
+        <i class="fa fa-laptop fa-lg"></i>Experience</a>
+    </li>
+    <li class="nav-item">
+      <a id="nav-contact" class="nav-link" href="#contact">
+        <i class="fa fa-phone fa-lg"></i>Contact</a>
+    </li>
+  </ul>
+
+
+  <div class="main_content1">
+     <section id="home" class="container content-section">
+    <div class="home_header text-center" v-if="home" style="padding:40px">
+        <h3 text-center>Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSSz2YOs3RUnw0Vy7HydfU69_PxRsBq9FS2QsmsxnJ6JoStL1eJA"
          alt="image here" class="round_image">
-      </div>
       <div class="padding">
-        <h4 style="color:#696969">About:</h4>
+        <h4 class="home_subhead">About:</h4>
         <p>I am currently an undergrad student at UC Santa Cruz, where I will be getting my
           Computer Science degree and minor in Stats. I have passion for web development and front end design.
-          You can find me on <a href="https://www.linkedin.com/in/arturo-lopez-936497158">LinkedIn</a>,
-           or check out my source code on <a href="https://github.com/alopez96">GitHub</a>
-           and <a href="https://bitbucket.org/arturolopez12/">Bitbucket</a>.
+          You can find me on <a class="link_color" href="https://www.linkedin.com/in/arturo-lopez-936497158">LinkedIn</a>,
+           or check out my source code on <a class="link_color" href="https://github.com/alopez96">GitHub</a>
+           and <a class="link_color" href="https://bitbucket.org/arturolopez12/">Bitbucket</a>.
           I enjoy taking on new projects and learning new technologies.
         </p>
-        <h4 style="color:#696969">Services:</h4>
-        <h6 style="color:#3385ff">Web Development</h6>
+        <h4 class="home_subhead">Services:</h4>
+        <h6 class="link_color1">Web Development</h6>
         <p>
-          My work entails full stack web development (front and backend), and
+          My work entails full stack web development (frontend and backend), and
           most of my projects have been with Web2py, VueJS, Python, Bootsrap, CSS.
           I am comfortable with learning new platforms and libraries, and am currently
           working on developing with Django and ReactJS.
         </p>
-        <h6 style="color:#3385ff">Android Development</h6>
+        <h6 class="link_color1">Android Development</h6>
         <p>I began learning mobile development with android apps, and am currently
-          working with exposing myself to iOS as well. My next projects will require the
+          working on developing for iOS as well. My next projects will require the
           use of React Native and Cordova, which will allow me to deploy my apps on
           both Google Play Store and Apple's App Store.</p>
         </div>
         <hr>
         <div class="text-center">
-          <h4>If you are interested in doing a project with me, message me </h4>
+          <h4 style="font-size: 25px">If you are interested in doing a project with me, message me </h4>
           <address>
-            <a class="blue_button btn" href="mailto:abc@gmail.com">Email Me</a><br>
+            <a class="blue_button btn" href="mailto:abc@gmail.com">Email Me</a>
           </address>
 
         </div>
     </div>
+  </section>
 
-
-    <div class="" v-if="experience">
-      <br />
-      <div class="text-center">
-        <h2>Experience</h2>
-        <h5>Check out some of the work I have done.</h5>
-      </div>
-        <div class="container jumbotron">
-          <div class="card-deck">
-            <div class="card" style="padding:20px">
-              <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
-                <a class="card-img-top" href="http://socer-a512d.appspot.com/soccer">
-                  <img border="0" alt="image load error" src="https://i.imgur.com/Y91bp8q.png" >
-                </a>
-              <br />
-              <div class="card-body">
-                <h6 class="card-text">
-                  Want to play a quick soccer game, or set up a tournament for a weekend?
-                  Have fun, be active, and meet new people!
-                </h6>
-                <hr />
-                <h6>
-                This website used Web2py as framework, Python for writing backend server,
-                VueJS for front end management, and HTML, CSS, and bootstrap
-                for styling. The chat was created using realtime database from Firebase to get instant messages.
-              </h6>
-              </div>
-            </div>
-            <div class="card" style="padding:20px">
-              <h4 class="card-title" style="color:#3385ff">Game Up</h4>
-              <a class="card-img-top text-center" href="#">
-                <img border="0" alt="image load error" src="https://i.imgur.com/bFV1JHx.png" width="300" height="400" >
-              </a>
-              <br />
-              <div class="card-body">
-                <h6 class="card-text">
-                  Connect with (video) gamers around your area, or a different town.
-                  Communicate with them, and create events, join others events, and follow friends.
-                  Customize your profile to let people know what your interests.
-                  Happy Gaming!
-                </h6>
-                <hr />
-                <h6>
-                This Android App was developed using Android Studio, Java, and
-                Firebase Database to manage information.
-              </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-
-    </div>
-
-    <div class="" v-if="education">
-      <br />
+  <section id="education" class="container content-section text-center">
       <div class="text-center">
         <h2>Education</h2>
         <h5>I am an undergrad student constantly looking to get involved in activities that go beyond classroom learning.</h5>
@@ -187,15 +160,64 @@
                     </p>
                     <a href="https://www.rotary.org/en/get-involved/rotaract-clubs">Visit Rotaract</a></li>
                 </div>
+              </div>
             </ul>
         </p>
-      </div>
     </div>
+  </section>
 
-    <div class="text-center" v-if="contact" id="contact">
+  <section id="experience" class="container content-section text-center">
+        <div class="text-center">
+          <h2>Experience</h2>
+          <h5>Check out some of the work I have done.</h5>
+        </div>
+          <div class="container jumbotron">
+            <div class="card-deck">
+              <div class="card" style="padding:20px">
+                <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
+                  <a class="card-img-top" href="http://socer-a512d.appspot.com/soccer">
+                    <img border="0" alt="webpage image error" height="300" src="https://i.imgur.com/Y91bp8q.png" >
+                  </a>
+                <br />
+                <div class="card-body">
+                  <h6 class="card-text">
+                    Want to play a quick soccer game, or set up a tournament for a weekend,
+                    have fun, be active, and meet new people?
+                  </h6>
+                  <hr />
+                  <h6>
+                  This website was created using Web2py as framework, Python for writing backend server,
+                  VueJS for front end management, and HTML, CSS, and bootstrap
+                  for styling. The chat was created using realtime database from Firebase to get instant messages.
+                </h6>
+                </div>
+              </div>
+              <div class="card" style="padding:20px">
+                <h4 class="card-title" style="color:#3385ff">Game Up</h4>
+                <a class="card-img-top text-center" href="#">
+                  <img border="0" alt="android image error" src="https://i.imgur.com/bFV1JHx.png" width="200" height="300" >
+                </a>
+                <br />
+                <div class="card-body">
+                  <h6 class="card-text">
+                    Connect with (video) gamers around your area, or a different town.
+                    Communicate with them, and create events, join others events, and follow friends.
+                    Customize your profile to let others know what your interests.
+                  </h6>
+                  <hr />
+                  <h6>
+                  This Android App was developed using Android Studio, Java, and
+                  Firebase Database to manage information.
+                </h6>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section id="contact" class="container content-section text-center">
       <div v-if="!form">
-      <br />
-      <h2>Contact Me</h2> <br />
+      <h2>Contact Me</h2>
       <h2>
         <div class="spacing">
           <a href="https://www.linkedin.com/in/arturo-lopez-936497158" class="fa fa-linkedin fa-lg"></a>
@@ -205,16 +227,17 @@
           <a href="mailto:abc@gmail.com" class="fa fa-envelope fa-lg"></a>
         </div>
       </h2>
+      <h4>If you would like to hire me for a project, fill out this form.</h4>
       <br />
       <div>
         <form>
           <div class="form-group">
             <label>First and Last Name</label>
-            <input type="text" v-model="name" required class="form-control" aria-describedby="emailHelp" placeholder="*requred">
+            <input type="text" v-model="name" class="form-control" aria-describedby="emailHelp" placeholder="*requred">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" v-model="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="*required">
+            <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="*required">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
           <div class="form-group">
@@ -233,7 +256,6 @@
         </form>
       </div>
   </div>
-    <br />
     <div v-if="form">
     <table class="table">
       <thead class="thead-dark">
@@ -266,10 +288,10 @@
       </tbody>
     </table>
   </div>
+</section>
 
 
-
-  </div>
+</div>
 </div>
 
 

@@ -38,7 +38,6 @@ var app = function() {
           });
           console.log('user added');
           alert("Thank you for messaging me!");
-          self.hom();
         }
         else{
           alert("Please enter email");
@@ -114,6 +113,37 @@ var app = function() {
       self.vue.enter = false;
     }
 
+    $().ready (function (){
+      $('#nav-home').click (function (event){
+        event.preventDefault();
+        var goTop = $('#home').offset().top;
+        $("html, body").scrollTop(goTop);
+      });
+
+      $('#nav-edu').click(function (event){
+         event.preventDefault();
+        var goTop = $('#education').offset().top;
+        $("html, body").animate({
+          scrollTop: goTop
+        }, 500);
+      });
+
+      $('#nav-exp').click(function (event){
+        event.preventDefault();
+        var goTop = $('#experience').offset().top;
+        $("html, body").animate({
+          scrollTop: goTop
+        }, 500);
+      });
+
+      $('#nav-contact').click(function (event){
+        event.preventDefault();
+        var goTop = $('#contact').offset().top;
+        $("html, body").animate({
+          scrollTop: goTop
+        }, 500);
+      });
+    });
 
 
     self.vue = new Vue({
@@ -128,11 +158,11 @@ var app = function() {
             phone: null,
             org: null,
             reason: null,
-            experience: false,
-            education: false,
-            contact: false,
+            experience: true,
+            education: true,
+            contact: true,
             home: true,
-            resume: false,
+            resume: true,
             enter: true,
             current_email: null,
             form: true,
