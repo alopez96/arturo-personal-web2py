@@ -44,7 +44,7 @@
 
   <ul class="nav flex-column fixed_navbar">
     <li class="nav-item text-center">
-      <img src="../static/images/favicon2.ico" style="height:30" alt="AL">
+      <img src="../Arturo/static/images/favicon2.ico" style="height:30" alt="AL">
     </li>
     <li class="nav-item">
       <a id="nav-home" class="nav-link" href="#home">
@@ -66,10 +66,10 @@
 
 
   <div class="main_content1">
-     <section id="home" class="container content-section">
-    <div class="home_header text-center" v-if="home" style="padding:40px">
+     <section  class="container content-section">
+    <div id="home" class="home_header text-center" v-if="home" style="padding:40px">
         <h3 text-center>Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
-        <img src="../static/images/arturo.JPG" width="32%" height="50%"
+        <img src="../Arturo/static/images/arturo.JPG" width="32%" height="50%"
          alt="image here" class="round_image">
       <div class="padding">
         <h4 class="home_subhead">About:</h4>
@@ -100,13 +100,12 @@
           <address>
             <a class="blue_button btn" href="mailto:larturo419@gmail.com">Email Me</a>
           </address>
-
         </div>
     </div>
   </section>
 
-  <section id="education" class="container content-section text-center">
-      <div class="text-center">
+  <section class="container content-section text-center">
+      <div id="education" class="text-center">
         <h2>Education</h2>
         <h5>I am an undergrad student constantly looking to get involved in activities that go beyond classroom learning.</h5>
       </div>
@@ -169,12 +168,54 @@
     </div>
   </section>
 
-  <section id="experience" class="container content-section text-center">
-        <div class="text-center">
+  <section class="container content-section text-center">
+        <div id="experience" class="text-center">
           <h2>Experience</h2>
-          <h5>Check out some of the work I have done.</h5>
+          <h5>Check out some of my most recent projects.</h5>
         </div>
           <div class="container jumbotron">
+            <div class="card-deck">
+              <div class="card" style="padding:20px">
+                <h4 class="card-title" style="color:#3385ff">Make Up Artist</h4>
+                <a class="card-img-top text-center" href="http://socer-a512d.appspot.com/Avalos">
+                  <img border="0" alt="android image error" src="https://i.imgur.com/LnXFb4s.png" width="450" height="300" >
+                </a>
+                <br />
+                <div class="card-body">
+                  <h6 class="card-text">
+                    Business website for make up artist.
+                    Contact information and services listed, portfolio included.
+                  </h6>
+                  <hr />
+                  <h6>
+                    This website was created using Web2py as framework, Python for writing backend server,
+                    VueJS for front end management, and HTML, CSS, and bootstrap
+                    for styling. The chat was created using realtime database from Firebase to get instant messages.
+                </h6>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px">
+                <h4 class="card-title" style="color:#3385ff">Game Up</h4>
+                <a class="card-img-top text-center" href="#">
+                  <img border="0" alt="android image error" src="https://i.imgur.com/bFV1JHx.png" width="200" height="300" >
+                </a>
+                <br />
+                <div class="card-body">
+                  <h6 class="card-text">
+                    Connect with (video) gamers around your area, or a different town.
+                    Communicate with them, and create events, join others events, and follow friends.
+                    Customize your profile to let others know what your interests.
+                  </h6>
+                  <hr />
+                  <h6>
+                  This Android App was developed using Android Studio, Java, and
+                  Firebase Database to manage information.
+                </h6>
+                </div>
+              </div>
+
+            </div>
             <div class="card-deck">
               <div class="card" style="padding:20px">
                 <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
@@ -195,41 +236,25 @@
                 </h6>
                 </div>
               </div>
-              <div class="card" style="padding:20px">
-                <h4 class="card-title" style="color:#3385ff">Game Up</h4>
-                <a class="card-img-top text-center" href="#">
-                  <img border="0" alt="android image error" src="https://i.imgur.com/bFV1JHx.png" width="200" height="300" >
-                </a>
-                <br />
-                <div class="card-body">
-                  <h6 class="card-text">
-                    Connect with (video) gamers around your area, or a different town.
-                    Communicate with them, and create events, join others events, and follow friends.
-                    Customize your profile to let others know what your interests.
-                  </h6>
-                  <hr />
-                  <h6>
-                  This Android App was developed using Android Studio, Java, and
-                  Firebase Database to manage information.
-                </h6>
-                </div>
-              </div>
+
             </div>
+
+
           </div>
+          <h2>
+            <div class="spacing">
+              <a href="https://www.linkedin.com/in/arturo-lopez-936497158" class="fa fa-linkedin fa-lg"></a>
+              <a href="https://twitter.com/ArturoL95987525" class="fa fa-twitter fa-lg"></a>
+              <a href="https://github.com/alopez96" class="fa fa-github fa-lg"></a>
+              <a href="https://bitbucket.org/arturolopez12/" class="fa fa-bitbucket fa-lg"></a>
+              <a href="mailto:abc@gmail.com" class="fa fa-envelope fa-lg"></a>
+            </div>
+          </h2>
     </section>
 
-    <section id="contact" class="container content-section text-center">
-      <div v-if="!form">
+    <section class="container content-section text-center">
+      <div id="contact" v-if="!form">
       <h2>Contact Me</h2>
-      <h2>
-        <div class="spacing">
-          <a href="https://www.linkedin.com/in/arturo-lopez-936497158" class="fa fa-linkedin fa-lg"></a>
-          <a href="https://twitter.com/ArturoL95987525" class="fa fa-twitter fa-lg"></a>
-          <a href="https://github.com/alopez96" class="fa fa-github fa-lg"></a>
-          <a href="https://bitbucket.org/arturolopez12/" class="fa fa-bitbucket fa-lg"></a>
-          <a href="mailto:abc@gmail.com" class="fa fa-envelope fa-lg"></a>
-        </div>
-      </h2>
       <h4>If you would like to hire me for a project, fill out this form.</h4>
       <br />
       <div>
