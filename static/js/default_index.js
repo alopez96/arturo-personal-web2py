@@ -58,51 +58,28 @@ var app = function() {
 
     self.hom = function(){
       console.log('home page');
-      if(!self.vue.home){
-        self.vue.home = !self.vue.home;
-        self.vue.education = false;
-        self.vue.contact = false;
-        self.vue.experience = false;
-      }
     }
 
+    self.edu = function(){
+      console.log('education page');
+    }
 
     self.exp = function(){
       console.log('experience page');
-      if(!self.vue.experience){
-        self.vue.experience = !self.vue.experience;
-        self.vue.education = false;
-        self.vue.contact = false;
-        self.vue.home = false;
-      }
     }
-    self.edu = function(){
-      console.log('education page');
-      if(!self.vue.education){
-        self.vue.education = !self.vue.education;
-        self.vue.experience = false;
-        self.vue.contact = false;
-        self.vue.home = false;
-      }
-    }
+
     self.cont = function(){
       console.log('contact page');
-      if(!self.vue.contact){
-        self.vue.contact = !self.vue.contact;
-        self.vue.education = false;
-        self.vue.experience = false;
-        self.vue.home = false;
-      }
     }
 
     self.res = function(){
       console.log('contact page');
-      if(!self.vue.resume){
-        self.vue.resume = !self.vue.resume;
-        self.vue.education = false;
-        self.vue.experience = false;
-        self.vue.home = false;
-      }
+      // if(!self.vue.resume){
+      //   self.vue.resume = !self.vue.resume;
+      //   self.vue.education = false;
+      //   self.vue.experience = false;
+      //   self.vue.home = false;
+      // }
     }
 
     self.enter_toogle = function(){
@@ -115,13 +92,15 @@ var app = function() {
 
     $().ready (function (){
       $('#nav-home').click (function (event){
-        event.preventDefault();
+        // event.preventDefault();
         var goTop = $('#home').offset().top;
-        $("html, body").scrollTop(goTop);
+        $("html, body").animate({
+          scrollTop: 0
+        }, "slow");
       });
 
       $('#nav-edu').click(function (event){
-         event.preventDefault();
+        // event.preventDefault();
         var goTop = $('#education').offset().top;
         $("html, body").animate({
           scrollTop: goTop
@@ -129,7 +108,7 @@ var app = function() {
       });
 
       $('#nav-exp').click(function (event){
-        event.preventDefault();
+        // event.preventDefault();
         var goTop = $('#experience').offset().top;
         $("html, body").animate({
           scrollTop: goTop
@@ -137,7 +116,7 @@ var app = function() {
       });
 
       $('#nav-contact').click(function (event){
-        event.preventDefault();
+        // event.preventDefault();
         var goTop = $('#contact').offset().top;
         $("html, body").animate({
           scrollTop: goTop

@@ -31,12 +31,10 @@ h4{
 }
 
 .main_content1 {
-    /* background: fixed no-repeat bottom center url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT160JnEDwWud0NPo3aAwzkd9VJkgQ4rB199iMxBTrkIXM8QoI8"),
-                fixed bottom repeat url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT160JnEDwWud0NPo3aAwzkd9VJkgQ4rB199iMxBTrkIXM8QoI8"); */
     padding-right: 50px;
     padding-bottom: 80px;
     padding-left: 100px;
-    margin-top: -150;
+    margin-top: 0;
 }
 
 .blue_button{
@@ -82,7 +80,7 @@ h4{
 }
 
 .home_header h3{
-    font-weight: 340;
+    font-weight: 345;
     font-size: 50px;
     line-height:150%;
 }
@@ -131,4 +129,16 @@ h4{
 
 .nav li{
   margin: 0 0 20px 0;
+}
+
+
+.card-body p{
+  line-height: 160%;
+  font-weight: 500;
+}
+
+#education_info p{
+  line-height: 170%;
+  font-weight: 300;
+  color:black;
 }

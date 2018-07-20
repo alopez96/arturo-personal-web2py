@@ -39,23 +39,20 @@
       </div>
     </nav>
   </div> -->
-
-
-
   <ul class="nav flex-column fixed_navbar">
     <li class="nav-item text-center">
       <img src="../Arturo/static/images/favicon2.ico" style="height:30" alt="AL">
     </li>
     <li class="nav-item">
-      <a id="nav-home" class="nav-link" href="#home">
+      <a id="nav-home" class="nav-link" href="#home" v-on:click="hom()">
         <i class="fa fa-home fa-lg"></i>Home</a>
     </li>
     <li class="nav-item">
-      <a id="nav-edu" class="nav-link" href="#education">
+      <a id="nav-edu" class="nav-link" href="#education" v-on:click="edu()">
         <i class="fa fa-book fa-lg"></i>Education</a>
     </li>
     <li class="nav-item">
-      <a id="nav-exp" class="nav-link" href="#experience">
+      <a id="nav-exp" class="nav-link" href="#experience" v-on:click="exp()">
         <i class="fa fa-laptop fa-lg"></i>Experience</a>
     </li>
     <li class="nav-item">
@@ -64,17 +61,17 @@
     </li>
   </ul>
 
-
   <div class="main_content1">
      <section  class="container content-section">
     <div id="home" class="home_header text-center" v-if="home" style="padding:40px">
-        <h3 text-center>Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
-        <img src="../Arturo/static/images/arturo.JPG" width="32%" height="50%"
+        <h3 >Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
+        <img src="../Arturo/static/images/arturo.JPG" width="26%" height="43%"
          alt="image here" class="round_image">
       <div class="padding">
+        <br />
         <h4 class="home_subhead">About:</h4>
         <p>I am currently an undergrad student at UC Santa Cruz, where I will be getting my
-          Computer Science degree and minor in Stats. I have passion for web development and front end design.
+          Computer Science degree and a minor in Stats. I have a passion for Web Development and Front End Design.
           You can find me on <a class="link_color" href="https://www.linkedin.com/in/arturo-lopez-936497158">LinkedIn</a>,
            or check out my source code on <a class="link_color" href="https://github.com/alopez96">GitHub</a>
            and <a class="link_color" href="https://bitbucket.org/arturolopez12/">Bitbucket</a>.
@@ -84,14 +81,14 @@
         <h6 class="link_color1">Web Development</h6>
         <p>
           My work entails full stack web development (frontend and backend), and
-          most of my projects have been with Web2py, VueJS, Python, Bootsrap, CSS.
+          most of my projects have been with Web2py framework, VueJS, Python, Bootsrap, CSS.
           I am comfortable with learning new platforms and libraries, and am currently
           working on developing with Django and ReactJS.
         </p>
         <h6 class="link_color1">Android Development</h6>
-        <p>I began learning mobile development with android apps, and am currently
+        <p>I began learning mobile development with Android apps, and am currently
           working on developing for iOS as well. My next projects will require the
-          use of React Native and Cordova, which will allow me to deploy my apps on
+          use of React Native, which will allow me to deploy my apps on
           both Google Play Store and Apple's App Store.</p>
         </div>
         <hr>
@@ -102,6 +99,12 @@
           </address>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </section>
 
   <section class="container content-section text-center">
@@ -112,7 +115,7 @@
         <div class="container jumbotron">
           <h2>Computer Science BS</h2>
           <p class="lead">
-            I have a Mathematics associates degree from Santa Rosa Junior College, and
+            I have a Mathematics Associates degree from Santa Rosa Junior College, and
             I will have my Computer Science Bachelor's in Fall 2019, from UC
             Santa Cruz.
             <ul class="list-group">
@@ -121,13 +124,13 @@
                 <div class="collapse" id="collapse1">
                   <div class="card card-body">
                     <ul class="list-group">
-                      <li list-group-item>Algorithm Analysis</li>
-                      <li list-group-item>Computer Architecture</li>
-                      <li list-group-item>Web Development</li>
-                      <li list-group-item>Mobile Applications</li>
-                      <li list-group-item>ADT programming</li>
-                      <li list-group-item>Assembly Language</li>
-                      <li list-group-item>UNIX/ Linux</li>
+                      <li >Algorithm Analysis</li>
+                      <li>Computer Architecture</li>
+                      <li>Web Development</li>
+                      <li >Mobile Applications</li>
+                      <li>ADT programming</li>
+                      <li>Assembly Language</li>
+                      <li>Intro to UNIX/ Linux</li>
                     </ul>
                   </div>
                 </div>
@@ -136,14 +139,14 @@
                 <div class="collapse" id="collapse2">
                   <div class="card card-body">
                     <ul class="list-group">
-                      <li list-group-item>Society of Hispanic Professional Engineers (SHPE)
+                      <li id="education_info"><h6>Society of Hispanic Professional Engineers (SHPE)</h6>
                         <p>SHPE’s mission is to change lives by empowering the Hispanic
                         community to realize its fullest potential and to impact the world
                         through STEM awareness, access, support and development, which advances
                         their vision of a world where Hispanics are highly valued and influential as the
                         leading innovators, scientists, mathematicians and engineers.</p>
                       <a href="http://www.shpe.org/">Visit SHPE</a> </li>
-                      <li list-group-item>MESA Engineering Achievement (MEP)
+                      <li id="education_info"><h6>MESA Engineering Achievement (MEP)</h6>
                         <p>MESA provides educationally and economically disadvantaged
                         students and their families with the essential skills and resources
                         to achieve success in school, career, life, and STEM-related disciplines.</p>
@@ -154,10 +157,10 @@
               <li class="list-group-item" data-toggle="collapse" href="#collapse3"
                 role="button" aria-expanded="false" aria-controls="collapse3">Extra cirricular</li>
                 <div class="collapse" id="collapse3">
-                  <div class="card card-body">
-                    UC Santa Cruz Rotaract Club
+                  <div class="card card-body" id="education_info">
+                    <h6>UC Santa Cruz Rotaract Club</h6>
                     <p>A service, leadership, professional and community
-                      service organization (often miscommunicated as a Social Service Club)
+                      service organization
                       for young men and women between the ages 18–30.
                     </p>
                     <a href="https://www.rotary.org/en/get-involved/rotaract-clubs">Visit Rotaract</a></li>
@@ -166,6 +169,12 @@
             </ul>
         </p>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </section>
 
   <section class="container content-section text-center">
@@ -178,62 +187,53 @@
               <div class="card" style="padding:20px">
                 <h4 class="card-title" style="color:#3385ff">Make Up Artist</h4>
                 <a class="card-img-top text-center" href="http://socer-a512d.appspot.com/Avalos">
-                  <img border="0" alt="android image error" src="https://i.imgur.com/LnXFb4s.png" width="450" height="300" >
+                  <img border="0" alt="android image error" src="https://i.imgur.com/LnXFb4s.png" width="600" height="250" >
                 </a>
                 <br />
                 <div class="card-body">
-                  <h6 class="card-text">
-                    Business website for make up artist.
-                    Contact information and services listed, portfolio included.
-                  </h6>
+                  <p class="card-text">
+                    Business website for makeup artist. Contact information and services listed, portfolio included.
+                  </p>
                   <hr />
-                  <h6>
-                    This website was created using Web2py as framework, Python for writing backend server,
-                    VueJS for front end management, and HTML, CSS, and bootstrap
-                    for styling. The chat was created using realtime database from Firebase to get instant messages.
-                </h6>
+                  <p>
+                    This website was created using Web2py, Python, VueJS, HMTL, CSS, and Bootstrap.
+                </p>
+                </div>
+              </div>
+
+              <div class="card" style="padding:20px">
+                <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
+                  <a class="card-img-top" href="http://socer-a512d.appspot.com/soccer">
+                    <img border="0" alt="webpage image error" height="250" src="https://i.imgur.com/Y91bp8q.png" >
+                  </a>
+                <br />
+                <div class="card-body">
+                  <p class="card-text">
+                    Play a quick soccer game, or set up a tournament for a weekend, have fun, be active, and meet new people.
+                  </p>
+                  <hr />
+                  <p>
+                  This website was created using Web2py, Python, VueJS, HTML, CSS, and bootstrap.
+                  The chat was created using realtime database from Firebase.
+                </p>
                 </div>
               </div>
 
               <div class="card" style="padding:20px">
                 <h4 class="card-title" style="color:#3385ff">Game Up</h4>
                 <a class="card-img-top text-center" href="#">
-                  <img border="0" alt="android image error" src="https://i.imgur.com/bFV1JHx.png" width="200" height="300" >
+                  <img border="0" alt="android image error" src="https://i.imgur.com/bFV1JHx.png" width="200" height="250" >
                 </a>
                 <br />
                 <div class="card-body">
-                  <h6 class="card-text">
-                    Connect with (video) gamers around your area, or a different town.
-                    Communicate with them, and create events, join others events, and follow friends.
+                  <p class="card-text">
+                    Connect with gamers around your area to create events, join others events, and follow friends.
                     Customize your profile to let others know what your interests.
-                  </h6>
+                  </p>
                   <hr />
-                  <h6>
-                  This Android App was developed using Android Studio, Java, and
-                  Firebase Database to manage information.
-                </h6>
-                </div>
-              </div>
-
-            </div>
-            <div class="card-deck">
-              <div class="card" style="padding:20px">
-                <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
-                  <a class="card-img-top" href="http://socer-a512d.appspot.com/soccer">
-                    <img border="0" alt="webpage image error" height="300" src="https://i.imgur.com/Y91bp8q.png" >
-                  </a>
-                <br />
-                <div class="card-body">
-                  <h6 class="card-text">
-                    Want to play a quick soccer game, or set up a tournament for a weekend,
-                    have fun, be active, and meet new people?
-                  </h6>
-                  <hr />
-                  <h6>
-                  This website was created using Web2py as framework, Python for writing backend server,
-                  VueJS for front end management, and HTML, CSS, and bootstrap
-                  for styling. The chat was created using realtime database from Firebase to get instant messages.
-                </h6>
+                  <p>
+                  This Android App was developed using Android Studio, Java, and Firebase Database to manage information.
+                </p>
                 </div>
               </div>
 
@@ -250,6 +250,12 @@
               <a href="mailto:abc@gmail.com" class="fa fa-envelope fa-lg"></a>
             </div>
           </h2>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
     </section>
 
     <section class="container content-section text-center">
@@ -321,11 +327,13 @@
 
 </div>
 </div>
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 
 
 <script src="{{=URL('static', 'js/default_index.js')}}"></script>
