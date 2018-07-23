@@ -30,20 +30,12 @@ h4{
    padding: 30px;
 }
 
-.main_content {
-    /* background: fixed no-repeat bottom center url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT160JnEDwWud0NPo3aAwzkd9VJkgQ4rB199iMxBTrkIXM8QoI8"),
-                fixed bottom repeat url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT160JnEDwWud0NPo3aAwzkd9VJkgQ4rB199iMxBTrkIXM8QoI8"); */
-     /* background: linear-gradient(#4db8ff, white); */
-     /* background: linear-gradient(#88BDBC, #376E6F); */
-}
-
 .blue_button{
   background-color: #3385ff;
 }
 
  .navbar{
-  border: 2px solid white;
-  border-radius: 12px;
+
 }
 
 #contact a{
@@ -66,4 +58,86 @@ h4{
 .round_image{
   border: 4px solid black;
  border-radius: 10px;
+}
+
+
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+/* Top left text */
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+/* Top right text */
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.home-image{
+  width: 100%;
+  height:100%;
+  margin: 0;
+}
+
+
+#overlay {
+     position: absolute;
+     clear: float;
+     width: 100%;
+     height: 52%;
+     background-color: rgba(0, 0, 0, 0.6);
+     color: #ffffff;
+}
+
+.home-header{
+  font-size: 60px;
+}
+
+.home-body{
+  font-size: 20px;
+  line-height: 160%;
+}
+
+#home-nav{
+  color:white;
+}
+
+.home-nav i{
+  color:white;
+}
+
+.other-navbar{
+  margin-left: 10px;
+  margin-right: 25px;
+  margin-top:5px;
 }

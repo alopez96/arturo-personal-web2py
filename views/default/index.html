@@ -13,9 +13,12 @@
 
 <div class="main_content">
   <div id="vue-div" class="display:none">
-    <div class="header_style">
-    <nav class="navbar navbar-expand-lg bg-light navbar-light">
-      <!-- <img src="../static/images/favicon2.ico" style="height:30" alt="favico here"> -->
+    <div class="header_style" v-if="!home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded other-navbar" style="background-color: white">
+      <img src="../Arturo/static/images/favicon2.ico" style="height:30" alt="favico here">
+      <div class="">
+        <span style="display:inline-block; width: 750;"></span>
+      </div>
       <a class="navbar-brand" href="#" v-on:click="hom()">
       <i class="fa fa-home fa-lg">Home</i></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,14 +32,54 @@
             <i class="fa fa-book fa-lg"></i>Education</a>
           <a class="nav-item nav-link" href="#" v-on:click="cont()">
             <i class="fa fa-phone fa-lg"></i>Contact</a>
-          <!-- <a class="nav-item nav-link" href="https://resume.com/share/arturosresume1234" v-on:click="cont()">
-            <i class="fa fa-list fa-lg"></i>Resume</a> -->
         </div>
       </div>
     </nav>
   </div>
 
+
+
+
+
     <div class="" v-if="home" >
+      <div class="home">
+              <img src="https://www.peachjar.com/img/pj-assets/apple-desk-laptop-working.jpg" class="home-image" alt="" >
+              <div class="top-left">
+                <nav class="navbar navbar-expand-lg navbar-light home-nav" style="background-color:#1C2838" style="background-color: white">
+                  <img src="../Arturo/static/images/favicon2.ico" style="height:30" alt="favico here">
+                  <span style="display:inline-block; width: 750;"></span>
+                  <a class="navbar-brand" href="#" v-on:click="hom()">
+                  <i class="fa fa-home fa-lg">Home</i></a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="nav-item nav-link" id="home-nav" href="#" v-on:click="exp()">
+                        <i class="fa fa-laptop fa-lg"></i>Experience</a>
+                      <a class="nav-item nav-link" id="home-nav" href="#" v-on:click="edu()">
+                        <i class="fa fa-book fa-lg"></i>Education</a>
+                      <a class="nav-item nav-link" id="home-nav" href="#" v-on:click="cont()">
+                        <i class="fa fa-phone fa-lg"></i>Contact</a>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+              <div class="centered" id="overlay">
+                <div class="centered">
+                  <div class="home-header">
+                      Full Stack Web Developer.
+                  </div>
+                  <div class="home-body">
+                      Designer and developer living in Bay Area, CA.
+                      If you are a business with a website inquiry or
+                      an employer looking to hire, you can get in touch with me here.
+                  </div>
+                  <button type="button" class="btn btn-primary btn-lg">Website inquiry</button>
+                  <button type="button" class="btn btn-primary btn-lg">Hire Me</button>
+                </div>
+              </div>
+      </div>
       <div class="text-center" style="padding:40px">
         <h3>Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSSz2YOs3RUnw0Vy7HydfU69_PxRsBq9FS2QsmsxnJ6JoStL1eJA"
