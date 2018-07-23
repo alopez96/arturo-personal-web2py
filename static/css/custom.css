@@ -50,10 +50,7 @@ h4{
   border-radius: 12px;
 }
 
-.card-img-top{
-  border: 4px solid #3385ff;
-  border-radius: 10px;
-}
+
 
 .round_image{
   border: 4px solid black;
@@ -88,6 +85,8 @@ h4{
     position: absolute;
     bottom: 8px;
     right: 16px;
+    color:white;
+    font-family: 'Lato', sans-serif;
 }
 
 /* Centered text */
@@ -96,6 +95,7 @@ h4{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -136,8 +136,108 @@ h4{
   color:white;
 }
 
+#other-nav{
+  color:#3385ff;
+  font-weight: 550;
+  font-family: 'Loto';
+}
+
+
+.other-nav i{
+  color:black;
+}
+
 .other-navbar{
   margin-left: 10px;
   margin-right: 25px;
   margin-top:5px;
+}
+
+.card{
+  padding-left:100px;
+  padding-right:100px;
+  border:white;
+
+}
+.card-img-top{
+  padding-top: 50px;
+}
+
+.card-img-top img{
+  border: 3px solid #3385ff;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+  width:50%;
+  height:350;
+}
+
+.card-img3 img{
+  border: 3px solid #3385ff;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+  width:30%;
+  height:350;
+}
+
+
+.sexy_line {
+    margin: 25px 0;
+    height: 1px;
+    border: 0;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, gray));
+}
+
+
+.about-me{
+  padding-left:50px;
+  padding-right:50px;
+  line-height: 200%;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.about-padding{
+  margin-top: 80px;
+   margin-bottom: 80px;
+   margin-right: 250px;
+   margin-left: 50px;
+}
+
+.service-padding{
+  margin-top: 80px;
+   margin-bottom: 80px;
+   margin-right: 50px;
+   margin-left: 50px;
+}
+
+#service-padding{
+  padding-top: 10px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+
+}
+
+.card-desc{
+  font-family: 'Raleway', sans-serif;
+  color:#4c4c4c;
+  font-weight: 550;
+  line-height: 130%;
+  font-size: 22px;
+}
+
+
+.not-clickable{
+  pointer-events: none;
+}
+
+.sexy_line2 {
+    margin-top:150px;
+    margin-bottom: 100px;
+    height: 1px;
+    border: 0;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, gray));
 }

@@ -2,6 +2,7 @@
 
 {{block head}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato|Lobster|Raleway|Roboto" rel="stylesheet">
 <script src="{{=URL('static', 'js/vue.js')}}"></script>
 <script>
   var sign_up_user_url = "{{=URL('api', 'sign_up_user')}}";
@@ -14,23 +15,21 @@
 <div class="main_content">
   <div id="vue-div" class="display:none">
     <div class="header_style" v-if="!home">
-    <nav class="navbar navbar-expand-lg navbar-light bg-faded other-navbar" style="background-color: white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-faded other-nav" style="background-color: white">
       <img src="../Arturo/static/images/favicon2.ico" style="height:30" alt="favico here">
-      <div class="">
         <span style="display:inline-block; width: 750;"></span>
-      </div>
-      <a class="navbar-brand" href="#" v-on:click="hom()">
-      <i class="fa fa-home fa-lg">Home</i></a>
+      <a class="nav-item nav-link" id="other-nav" href="#" v-on:click="hom()">
+      <i class="fa fa-home fa-lg"></i>Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link mr-auto" href="#" v-on:click="exp()">
-            <i class="fa fa-laptop fa-lg"></i>Experience</a>
-          <a class="nav-item nav-link" href="#" v-on:click="edu()">
+          <a class="nav-item nav-link mr-auto" id="other-nav" href="#" v-on:click="exp()">
+            <i class="fa fa-laptop fa-lg"></i>Projects</a>
+          <a class="nav-item nav-link" id="other-nav" href="#" v-on:click="edu()">
             <i class="fa fa-book fa-lg"></i>Education</a>
-          <a class="nav-item nav-link" href="#" v-on:click="cont()">
+          <a class="nav-item nav-link" id="other-nav" href="#" v-on:click="cont()">
             <i class="fa fa-phone fa-lg"></i>Contact</a>
         </div>
       </div>
@@ -48,7 +47,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light home-nav" style="background-color:#1C2838" style="background-color: white">
                   <img src="../Arturo/static/images/favicon2.ico" style="height:30" alt="favico here">
                   <span style="display:inline-block; width: 750;"></span>
-                  <a class="navbar-brand" href="#" v-on:click="hom()">
+                  <a class="nav-item nav-link" href="#" v-on:click="hom()">
                   <i class="fa fa-home fa-lg">Home</i></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -56,7 +55,7 @@
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                       <a class="nav-item nav-link" id="home-nav" href="#" v-on:click="exp()">
-                        <i class="fa fa-laptop fa-lg"></i>Experience</a>
+                        <i class="fa fa-laptop fa-lg"></i>Projects</a>
                       <a class="nav-item nav-link" id="home-nav" href="#" v-on:click="edu()">
                         <i class="fa fa-book fa-lg"></i>Education</a>
                       <a class="nav-item nav-link" id="home-nav" href="#" v-on:click="cont()">
@@ -64,6 +63,9 @@
                     </div>
                   </div>
                 </nav>
+              </div>
+              <div class="bottom-right">
+                <h3>Arturo Lopez</h3>
               </div>
               <div class="centered" id="overlay">
                 <div class="centered">
@@ -80,94 +82,154 @@
                 </div>
               </div>
       </div>
-      <div class="text-center" style="padding:40px">
-        <h3>Hello, my name is Arturo Lopez. I am Designer and Developer living in the Bay Area, CA.</h3>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSSz2YOs3RUnw0Vy7HydfU69_PxRsBq9FS2QsmsxnJ6JoStL1eJA"
-         alt="image here" class="round_image">
-      </div>
-      <div class="padding">
-        <h4 style="color:#696969">About:</h4>
-        <p>I am currently an undergrad student at UC Santa Cruz, where I will be getting my
-          Computer Science degree and minor in Stats. I have passion for web development and front end design.
-          You can find me on <a href="https://www.linkedin.com/in/arturo-lopez-936497158">LinkedIn</a>,
-           or check out my source code on <a href="https://github.com/alopez96">GitHub</a>
-           and <a href="https://bitbucket.org/arturolopez12/">Bitbucket</a>.
-          I enjoy taking on new projects and learning new technologies.
-        </p>
-        <h4 style="color:#696969">Services:</h4>
-        <h6 style="color:#3385ff">Web Development</h6>
-        <p>
-          My work entails full stack web development (front and backend), and
-          most of my projects have been with Web2py, VueJS, Python, Bootsrap, CSS.
-          I am comfortable with learning new platforms and libraries, and am currently
-          working on developing with Django and ReactJS.
-        </p>
-        <h6 style="color:#3385ff">Android Development</h6>
-        <p>I began learning mobile development with android apps, and am currently
-          working with exposing myself to iOS as well. My next projects will require the
-          use of React Native and Cordova, which will allow me to deploy my apps on
-          both Google Play Store and Apple's App Store.</p>
+      <div class="about-me">
+        <br />
+        <br />
+        <br />
+        <div class="about-body">
+          <div class="container">
+            <div class="about-padding">
+              <p>I am currently an undergrad student at UC Santa Cruz, where I will be getting my
+                Computer Science degree and minor in Stats. I have passion for web development and front end design.
+                You can find me on <a href="https://www.linkedin.com/in/arturo-lopez-936497158">LinkedIn</a>,
+                 or check out my source code on <a href="https://github.com/alopez96">GitHub</a>
+                 and <a href="https://bitbucket.org/arturolopez12/">Bitbucket</a>.
+                I enjoy taking on new projects and learning new technologies.
+              </p>
+            </div>
+            <div class="about-padding">
+              <p>My passion for Programming began when I was first introduced to
+              Engineering in High School. I went on to explore different Engineering
+              Fields at Community College, and I found Computer Science.
+              I wanted to understand how the screen we interact with operates and how
+              I can work with the backend to change and create things.
+              I want to develop and create things that helps others.
+              </p>
+            </div>
+          </div>
         </div>
-        <hr>
+        <div class="service-padding">
+          <h4>Services</h4>
+          <div class="container">
+            <div class="half" id="service-padding">
+              <h5 style="color:#3385ff">Web Development</h5>
+              <p>
+                My work entails <strong>full stack web development</strong> (front and backend), and
+                most of my projects have been with <strong> Web2py, VueJS, Python, Bootsrap, CSS
+                </strong>.
+                I am comfortable with learning new platforms and libraries, and am currently
+                working on developing with Django and ReactJS.
+              </p>
+
+            </div>
+            <div class="half" id="service-padding">
+              <h5 style="color:#3385ff">Android Development</h5>
+              <p>I began learning mobile development with android apps, and am currently
+                working with exposing myself to iOS as well. My next projects will require the
+                use of React Native and Cordova, which will allow me to deploy my apps on
+                both Google Play Store and Apple's App Store.</p>
+            </div>
+          </div>
+        </div>
+        <hr class="sexy_line" />
+        <br />
         <div class="text-center">
-          <h4>If you are interested in doing a project with me, message me </h4>
+          <h4>If you are interested in doing a project with me, message me</h4>
           <address>
             <a class="blue_button btn" href="mailto:abc@gmail.com">Email Me</a><br>
           </address>
-
         </div>
+      </div>
+
     </div>
 
 
     <div class="" v-if="experience">
       <br />
-      <div class="text-center">
-        <h2>Experience</h2>
-        <h5>Check out some of the work I have done.</h5>
-      </div>
-        <div class="container jumbotron">
-          <div class="card-deck">
-            <div class="card" style="padding:20px">
-              <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
-                <a class="card-img-top" href="http://socer-a512d.appspot.com/soccer">
-                  <img border="0" alt="image load error" src="https://i.imgur.com/Y91bp8q.png" >
+      <div class="container">
+        <div class="cards">
+          <div >
+            <div class="container">
+              <div class="twothirds">
+                <a class="card-img-top text-center" href="http://socer-a512d.appspot.com/Avalos">
+                  <img border="0" alt="android image error" src="https://i.imgur.com/LnXFb4s.png" >
                 </a>
-              <br />
-              <div class="card-body">
-                <h6 class="card-text">
-                  Want to play a quick soccer game, or set up a tournament for a weekend?
-                  Have fun, be active, and meet new people!
-                </h6>
-                <hr />
-                <h6>
-                This website used Web2py as framework, Python for writing backend server,
-                VueJS for front end management, and HTML, CSS, and bootstrap
-                for styling. The chat was created using realtime database from Firebase to get instant messages.
-              </h6>
+              </div>
+              <div class="third">
+                <div class="card-body">
+                  <h4 class="card-title" style="color:#3385ff">Make Up Artist</h4>
+                  <p class="card-text card-desc">
+                    Business website for makeup artist.
+                  </p>
+                  <hr class="sexy_line"/>
+                  <p>
+                    <button class="not-clickable btn btn-sm btn-danger">Web2py</button>
+                    <button class="not-clickable btn btn-sm btn-danger">VueJS</button>
+                    <button class="not-clickable btn btn-sm btn-danger">HTML</button>
+                    <button class="not-clickable btn btn-sm btn-danger">CSS</button>
+                    <button class="not-clickable btn btn-sm btn-danger">Python</button>
+                    <button class="not-clickable btn btn-sm btn-danger">Bootstrap</button>
+                </p>
+                </div>
               </div>
             </div>
-            <div class="card" style="padding:20px">
-              <h4 class="card-title" style="color:#3385ff">Game Up</h4>
-              <a class="card-img-top text-center" href="#">
-                <img border="0" alt="image load error" src="https://i.imgur.com/bFV1JHx.png" width="300" height="400" >
-              </a>
-              <br />
-              <div class="card-body">
-                <h6 class="card-text">
-                  Connect with (video) gamers around your area, or a different town.
-                  Communicate with them, and create events, join others events, and follow friends.
-                  Customize your profile to let people know what your interests.
-                  Happy Gaming!
-                </h6>
-                <hr />
-                <h6>
-                This Android App was developed using Android Studio, Java, and
-                Firebase Database to manage information.
-              </h6>
+          </div>
+          <hr class="sexy_line2" />
+          <div>
+            <div class="container">
+              <div class="twothirds">
+                <a class="card-img-top" href="http://socer-a512d.appspot.com/soccer">
+                  <img border="0" alt="webpage image error"  src="https://i.imgur.com/Y91bp8q.png" >
+                </a>
+              </div>
+              <div class="third">
+                <div class="card-body">
+                  <h4 class="card-title" style="color:#3385ff">Pick Up Soccer</h4>
+                  <p class="card-text card-desc">
+                    Website for people looking to play soccer with others nearby.
+                  </p>
+                  <hr class="sexy_line"/>
+                  <p>
+                    <button class="not-clickable btn btn-sm btn-danger">Web2py</button>
+                    <button class="not-clickable btn btn-sm btn-danger">VueJS</button>
+                    <button class="not-clickable btn btn-sm btn-danger">HTML</button>
+                    <button class="not-clickable btn btn-sm btn-danger">CSS</button>
+                    <button class="not-clickable btn btn-sm btn-danger">Python</button>
+                    <button class="not-clickable btn btn-sm btn-danger">Bootstrap</button>
+                    <button class="not-clickable btn btn-sm btn-danger">Firebase</button>
+                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="sexy_line2"/>
+          <div >
+            <div class="container">
+              <div class="twothirds">
+                <a class="card-img3 text-center" href="#" >
+                  <img border="0" alt="android image error" src="https://i.imgur.com/bFV1JHx.png"  >
+                </a>
+              </div>
+              <div class="third">
+                <div class="card-body">
+                  <h4 class="card-title" style="color:#3385ff">Game Up</h4>
+                  <p class="card-text card-desc">
+                    Android App for gamers to connect with others to create and join events.
+                  </p>
+                  <hr class="sexy_line"/>
+                  <p>
+                    <button class="not-clickable btn btn-sm btn-danger">Android Studio</button>
+                    <button class="not-clickable btn btn-sm btn-danger">Java</button>
+                    <button class="not-clickable btn btn-sm btn-danger">Firebase</button>
+                </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+
+      </div>
 
     </div>
 
