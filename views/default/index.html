@@ -77,7 +77,7 @@
                       If you are a business with a website inquiry or
                       an employer looking to hire, you can get in touch with me here.
                   </div>
-                  <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeVwwLKa_Uy5eTbz-OVuPRParxhWhtaFPXQaG5tHgaU1juoZA/viewform?usp=sf_link">I need a website</a>
+                  <a input="submit" class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeVwwLKa_Uy5eTbz-OVuPRParxhWhtaFPXQaG5tHgaU1juoZA/viewform?usp=sf_link">I need a website</a>
                   <!-- <button type="button" class="btn btn-primary btn-lg">Hire Me</button> -->
                 </div>
               </div>
@@ -335,8 +335,8 @@
 
     <div class="text-center" v-if="contact" id="contact">
       <div v-if="!form">
-      <br />
-      <h2>Contact Me</h2> <br />
+      <h2>Contact Me</h2>
+      <img src="../Arturo/static/images/arturo.JPG" alt="">
       <h2>
         <div class="spacing">
           <a href="https://www.linkedin.com/in/arturo-lopez-936497158" class="fa fa-linkedin fa-lg"></a>
@@ -349,26 +349,25 @@
       <br />
       <div>
         <form>
-          <div class="form-group">
-            <label>First and Last Name</label>
-            <input type="text" v-model="name" required class="form-control" aria-describedby="emailHelp" placeholder="*requred">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" v-model="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="*required">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="text" v-model="phone" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Company/ Organization</label>
-            <input type="text" v-model="org" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Description</label>
-            <input type="text" v-model="reason" class="form-control" placeholder="project details, budget, deadline">
+          <div class="container">
+            <div class="half">
+              <div class="form-group">
+                <label>First and Last Name</label>
+                <input type="text" v-model="name" class="form-control" aria-describedby="emailHelp">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+
+            </div>
+            <div class="half">
+              <div class="form-group">
+                <label>Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+              </div>
+            </div>
           </div>
           <button type="submit" v-on:click="add_user" href="#" class="btn btn-primary">Submit</button>
         </form>
