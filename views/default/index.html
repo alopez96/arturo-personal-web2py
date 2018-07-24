@@ -1,6 +1,7 @@
 {{extend 'layout.html'}}
 
 {{block head}}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Lato|Lobster||Roboto+Slab|Raleway|Roboto" rel="stylesheet">
 <script src="{{=URL('static', 'js/vue.js')}}"></script>
@@ -17,7 +18,7 @@
     <div class="header_style" v-if="!home">
     <nav class="navbar navbar-expand-lg navbar-light bg-faded other-nav" style="background-color: white">
       <img src="../Arturo/static/images/favicon2.ico" style="height:30" alt="favico here">
-        <span style="display:inline-block; width: 750;"></span>
+        <!-- <span style="display:inline-block; width: 750;"></span> -->
       <a class="nav-item nav-link" id="other-nav" href="#" v-on:click="hom()">
       <i class="fa fa-home fa-lg"></i>Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,10 +47,10 @@
               <div class="top-left">
                 <nav class="navbar navbar-expand-lg navbar-light home-nav" style="background-color:#1C2838" style="background-color: white">
                   <img src="../Arturo/static/images/favicon2.ico" style="height:30" alt="favico here">
-                  <span style="display:inline-block; width: 750;"></span>
+                  <!-- <span style="display:inline-block; width: 750;"></span> -->
                   <a class="nav-item nav-link" href="#" v-on:click="hom()">
                   <i class="fa fa-home fa-lg">Home</i></a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <button style="background-color:white;"class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
