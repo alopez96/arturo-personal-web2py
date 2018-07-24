@@ -101,8 +101,11 @@
               <p>My passion for Programming began when I was first introduced to
               Engineering in High School. I went on to explore different Engineering
               Fields at Community College, and I found Computer Science.
-              I wanted to understand how the screen we interact with operates and how
-              I can work with the backend to change and create things.
+              I have always questioned how things work, how they are designed and come
+              to be.
+              My interest in technology
+              drove my desire to understand how it operates and how
+              I can work with it to change it and design things.
               I want to develop and create things that helps others.
               </p>
             </div>
@@ -151,7 +154,7 @@
           <div >
             <div class="container">
               <div class="twothirds">
-                <a class="card-img-top text-center" href="http://socer-a512d.appspot.com/Avalos">
+                <a class="card-img1 text-center" href="http://socer-a512d.appspot.com/Avalos">
                   <img border="0" alt="android image error" src="https://i.imgur.com/LnXFb4s.png" >
                 </a>
               </div>
@@ -178,7 +181,7 @@
           <div>
             <div class="container">
               <div class="twothirds">
-                <a class="card-img-top" href="http://socer-a512d.appspot.com/soccer">
+                <a class="card-img1" href="http://socer-a512d.appspot.com/soccer">
                   <img border="0" alt="webpage image error"  src="https://i.imgur.com/Y91bp8q.png" >
                 </a>
               </div>
@@ -228,73 +231,106 @@
           </div>
         </div>
 
-
       </div>
-
     </div>
 
-    <div class="" v-if="education">
-      <br />
-      <div class="text-center">
-        <h2>Education</h2>
-        <h5>I am an undergrad student constantly looking to get involved in activities that go beyond classroom learning.</h5>
-      </div>
-        <div class="container jumbotron">
-          <h2>Computer Science BS</h2>
-          <p class="lead">
-            I have a Mathematics associates degree from Santa Rosa Junior College, and
-            I will have my Computer Science Bachelor's in fall 2019, from UC
-            Santa Cruz.
-            <ul class="list-group">
-              <li class="list-group-item" data-toggle="collapse" href="#collapse1"
-                role="button" aria-expanded="false" aria-controls="collapse1">Relavant Courses</li>
-                <div class="collapse" id="collapse1">
-                  <div class="card card-body">
-                    <ul class="list-group">
-                      <li list-group-item>Algorithm Analysis</li>
-                      <li list-group-item>Computer Architecture</li>
-                      <li list-group-item>Web Development</li>
-                      <li list-group-item>Mobile Applications</li>
-                      <li list-group-item>ADT programming</li>
-                      <li list-group-item>Assembly Language</li>
-                      <li list-group-item>UNIX/ Linux</li>
-                    </ul>
-                  </div>
-                </div>
-              <li class="list-group-item" data-toggle="collapse" href="#collapse2"
-                role="button" aria-expanded="false" aria-controls="collapse2">Programs</li>
-                <div class="collapse" id="collapse2">
-                  <div class="card card-body">
-                    <ul class="list-group">
-                      <li list-group-item>Society of Hispanic Professional Engineers (SHPE)
-                        <p>SHPE’s mission is to change lives by empowering the Hispanic
-                        community to realize its fullest potential and to impact the world
-                        through STEM awareness, access, support and development, which advances
-                        their vision of a world where Hispanics are highly valued and influential as the
-                        leading innovators, scientists, mathematicians and engineers.</p>
-                      <a href="http://www.shpe.org/">Visit SHPE</a> </li>
-                      <li list-group-item>MESA Engineering Achievement (MEP)
-                        <p>MESA provides educationally and economically disadvantaged
-                        students and their families with the essential skills and resources
-                        to achieve success in school, career, life, and STEM-related disciplines.</p>
-                      <a href="https://mep.soe.ucsc.edu/">Visit MEP</a></li>
-                    </ul>
-                  </div>
-                </div>
-              <li class="list-group-item" data-toggle="collapse" href="#collapse3"
-                role="button" aria-expanded="false" aria-controls="collapse3">Extra cirricular</li>
-                <div class="collapse" id="collapse3">
-                  <div class="card card-body">
-                    UC Santa Cruz Rotaract Club
-                    <p>A service, leadership, professional and community
-                      service organization (often miscommunicated as a Social Service Club)
-                      for young men and women between the ages 18–30.
-                    </p>
-                    <a href="https://www.rotary.org/en/get-involved/rotaract-clubs">Visit Rotaract</a></li>
-                </div>
-            </ul>
-        </p>
-      </div>
+    <div class="education" v-if="education">
+        <div class="container">
+          <div class="ed-header">
+            <div class="container">
+              <div class="third">
+                <img src="http://www.guardnet.co/wp-content/uploads/2015/12/Santa-Rosa.jpg" width="70%;" alt="">
+                <img src="http://conservationscholars.ucsc.edu/wp-content/uploads/UCSC_seal_logo.png" height="20%;" alt="">
+              </div>
+              <div class="third">
+                <p>
+                  I have a <strong>Mathematics Associates</strong> degree from
+                  <a href="https://www.santarosa.edu/">Santa Rosa Junior College</a> and
+                  I will have my <strong>Computer Science Bachelor's</strong> in fall 2019, from <a href="https://www.ucsc.edu/">UC Santa Cruz</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="courses">
+            <div class="container">
+              <div class="half">
+                <h4>Relavant Courses</h4>
+                <ul>
+                  <li>HTML, CSS</li>
+                  <li>JavaSCript</li>
+                  <li>Python</li>
+                  <li>Java, C , C++</li>
+                  <li>MIPS Assembly</li>
+
+                </ul>
+              </div>
+              <div class="half">
+                <h4>Languages</h4>
+                <ul>
+                  <li>Algorithm Analysis</li>
+                  <li>Computer Architecture</li>
+                  <li>Web Development</li>
+                  <li>Mobile Applications</li>
+                  <li>Intro to Java and C</li>
+                  <li>Assembly Language</li>
+                  <li>UNIX/ Linux</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="programs">
+            <h3>Programs</h3>
+            <p>
+              I am an undergrad student constantly looking to get involved in activities that go beyond classroom learning.
+            </p>
+            <div class="container">
+              <div class="third">
+                <img src="http://shpeboston.org/wp-content/uploads/2017/11/shpe-logo.png" width="50%;" alt="">
+              </div>
+              <div class="twothirds">
+                <h5>Society of Hispanic Professional Engineers (SHPE)</h5>
+                  <p>SHPE’s mission is to change lives by empowering the Hispanic
+                  community to realize its fullest potential and to impact the world
+                  through STEM awareness, access, support and development, which advances
+                  their vision of a world where Hispanics are highly valued and influential as the
+                  leading innovators, scientists, mathematicians and engineers.</p>
+                  <a class="btn btn-primary btn-sm" id="edu-btn" href="http://www.shpe.org/">Visit SHPE</a> </li>
+              </div>
+            </div>
+            <div class="container">
+              <div class="third">
+                <img src="https://mesa.ucsc.edu/images/msp-logo/color-banner" width="70%;" alt="">
+              </div>
+              <div class="twothirds">
+                <h5>MESA Engineering Achievement (MEP)</h5>
+                  <p>MESA provides educationally and economically disadvantaged
+                  students and their families with the essential skills and resources
+                  to achieve success in school, career, life, and STEM-related disciplines.</p>
+                <a class="btn btn-primary btn-sm" id="edu-btn" href="https://mep.soe.ucsc.edu/">Visit MEP</a>
+              </div>
+            </div>
+          </div>
+          <div class="extra">
+            <h3>Extra Curricular</h3>
+            <div class="container">
+              <div class="third">
+                <img src="http://rotaractsantacruzcounty.org/wp-content/uploads/2016/10/Rotaract-Logo2.png" width="60%;" alt="">
+              </div>
+              <div class="twothirds">
+                <h5>UC Santa Cruz Rotaract Club</h5>
+                <p>A service, leadership, professional and community
+                  service organization (often miscommunicated as a Social Service Club)
+                  for young men and women between the ages 18–30.
+                </p>
+                <a class="btn btn-primary btn-sm" id="edu-btn" href="https://www.rotary.org/en/get-involved/rotaract-clubs">Visit Rotaract</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
     </div>
 
     <div class="text-center" v-if="contact" id="contact">
