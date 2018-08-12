@@ -86,7 +86,7 @@ h4{
     font-family: 'Lato', sans-serif;
 }
 
-/* Centered text */
+
 .centered {
     position: absolute;
     top: 50%;
@@ -97,7 +97,7 @@ h4{
 
 .container {
     position: relative;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .home-image{
@@ -239,7 +239,7 @@ h4{
 
 .education div{
   margin-top:2%;
-  margin-bottom:12%;
+  margin-bottom:2%;
 }
 
 .education p{
@@ -251,6 +251,7 @@ h4{
 
 .courses li{
   margin-top:15px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -263,17 +264,13 @@ h4{
 }
 
 .courses{
-    width: 80%;
-    height: 80%;
-    background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://media.istockphoto.com/photos/concept-of-education-or-back-to-school-on-green-background-picture-id649615432?k=6&m=649615432&s=612x612&w=0&h=P03xv1dMmgVWq9oOzCoY7-7Vv824NKyiEVmXLoH9Ry8=");
+    width: 100%;
+    height: auto;
+    /* background-size: cover; */
+    /* background: linear-gradient(white, #00385C); */
+    background-color: #4682B4;
     position: relative;
     color:white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid white;
-    border-radius: 8px;
 }
 
 .android img{
@@ -304,9 +301,9 @@ h4{
 
 .ed-header p{
   font-family: 'Roboto Slab', serif;
-  font-size: 21px;
+  font-size: 22px;
   line-height: 140%;
-  font-weight: 480;
+  font-weight: 500;
   margin-top: 10%;
 
 }
@@ -332,12 +329,12 @@ h4{
 }
 
 #shpe{
-  margin-top: 3%;
-  margin-bottom: -3%;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 
 #mep{
-  margin-bottom: -6%;
+  margin-bottom: 4%;
 
 }
 
@@ -381,4 +378,29 @@ h4{
   width:auto;
   height:70%;
   border-radius: 4%;
+}
+
+
+.hobbies h3{
+  font-family: Raleway;
+}
+
+.edu-schools{
+  background: linear-gradient(white, #D4CBC1,white);
+  /* color:white; */
+}
+
+.edu-schools a{
+  color:#F889B6;
+}
+
+.programs{
+  padding-top:10%;
+  padding-bottom: 1%;
+}
+
+.computer-image{
+  padding-top: 50px;
+  height:20%;
+  width:auto;
 }
