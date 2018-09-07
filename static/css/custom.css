@@ -102,8 +102,7 @@ h4{
 
 .home-image{
   width: 100%;
-  height:100%;
-  margin: 0;
+  height: auto;
 }
 
 
@@ -135,15 +134,22 @@ h4{
 
 #home-nav{
   color:white;
+  font-weight: 520;
+  font-family: 'Loto';
 }
 
 .home-nav i{
   color:white;
 }
 
+
+.home-nav a{
+  color:white;
+}
+
 #other-nav{
-  color:#4c4c4c	;
-  font-weight: 550;
+  color:#4c4c4c;
+  font-weight: 540;
   font-family: 'Loto';
 }
 
@@ -322,7 +328,7 @@ h4{
   border: 2px solid white;
   border-radius: 5px;
   width:auto;
-  height:32%;
+  height:30%;
   box-shadow: 5px 7px #888888;
   margin: 0% 0% 2% 0%;
 
